@@ -566,8 +566,11 @@ function setupImage(type){
                 layer.triangle(0,-120,-20,-95,20,-95)
                 layer.rotate(45)
             }
-            key=69
-            key=(key>>>0).toString(6)
+            
+            //key=69
+            //key=(key>>>0).toString(6)
+            key='+-'
+
             for(let a=0,la=key.length;a<la;a++){
                 layer.push()
                 layer.translate(-la*25+25+a*50,0)
@@ -602,6 +605,15 @@ function setupImage(type){
                         layer.rect(0,7.5,20,5)
                         layer.rect(-7.5,0,5,20)
                         layer.rect(7.5,0,5,20)
+                    break
+                    case '+':
+                        layer.rotate(45)
+                        layer.rect(0,0,25,5)
+                        layer.rect(0,0,5,25)
+                    break
+                    case '-':
+                        layer.rotate(45)
+                        layer.rect(0,0,5,25)
                     break
                 }
                 layer.pop()
@@ -638,7 +650,21 @@ function setupImage(type){
             }*/
             //airborne code
 
-            key=25
+            /*layer.rotate(45)
+            layer.fill(255,230,0)
+            layer.rect(0,0,20,140)
+            layer.rotate(-45)*/
+            //cavalry code
+
+            layer.fill(0,200,255)
+            layer.quad(0,0,-80,-10,-80,-30)
+            layer.quad(0,0,-80,10,-80,30)
+            layer.quad(0,0,80,-10,80,-30)
+            layer.quad(0,0,80,10,80,30)
+            layer.ellipse(0,0,20)
+            //support group code
+
+            key=6
             key=(key>>>0).toString(6)
 
             /*layer.fill(80)
@@ -708,14 +734,56 @@ function setupImage(type){
                 layer.rotate(45)
             }
 
+            /*layer.fill(100,255,255)
+            layer.quad(0,-100,-50,0,0,100,50,0)
+            layer.fill(150,255,255)
+            layer.quad(0,-70,-35,0,0,70,35,0)*/
+            //diamond code
+
             /*layer.fill(160)
             layer.triangle(0,30,0,130,-40,110)
             layer.fill(120)
             layer.triangle(0,30,0,130,40,110)*/
             //mountain code
 
-            key=240
+            /*layer.fill(120)
+            layer.triangle(-10,40,-10,70,-40,55)
+            layer.triangle(10,40,10,70,40,55)*/
+            //backduck code
+
+            /*layer.rotate(45)
+            layer.fill(255,230,0)
+            layer.rect(0,0,20,140)
+            layer.rotate(-45)*/
+            //cavalry code
+
+            /*layer.rotate(45)
+            layer.fill(255,125,0)
+            layer.rect(0,0,90,10)
+            layer.rect(-40,-30,10,50)
+            layer.rect(40,30,10,50)
+            layer.rotate(-45)*/
+            //cavalry code
+
+            /*layer.fill(120,120,240)
+            layer.arc(0,0,120,120,0,90)
+            layer.arc(0,0,120,120,-180,-90)
+            layer.fill(0,240,240)
+            layer.arc(0,0,120,120,-90,0)
+            layer.arc(0,0,120,120,90,180)
+            layer.fill(150,255,0)
+            layer.ellipse(0,0,100)*/
+            //police code
+
+            /*layer.fill(80)
+            for(let a=0,la=18;a<la;a++){
+                layer.ellipse(80*sin(a*20),80*cos(a*20),10)
+            }*/
+            //shotgun code
+
+            key=75
             key=(key>>>0).toString(6)
+            //key='z'
 
             /*layer.fill(80)
             layer.rect(0,0,key.length*50+20,60,30)
@@ -727,6 +795,17 @@ function setupImage(type){
             layer.rect(key.length*-12.5+5,30,key.length*20-10,6,3)
             layer.rect(key.length*12.5-5,30,key.length*20-10,6,3)*/
             //motorized code
+
+            layer.fill(200)
+            layer.ellipse(key.length*25+10,-10,10)
+            layer.ellipse(key.length*25+10,10,10)
+            layer.ellipse(key.length*-25-10,-10,10)
+            layer.ellipse(key.length*-25-10,10,10)
+            layer.ellipse(key.length*25+5,-20,10)
+            layer.ellipse(key.length*25+5,20,10)
+            layer.ellipse(key.length*-25-5,-20,10)
+            layer.ellipse(key.length*-25-5,20,10)
+            //dispersal code
 
             for(let a=0,la=key.length;a<la;a++){
                 layer.push()
@@ -762,6 +841,12 @@ function setupImage(type){
                         layer.rect(0,7.5,20,5)
                         layer.rect(-7.5,0,5,20)
                         layer.rect(7.5,0,5,20)
+                    break
+                    case 'z':
+                        layer.rect(0,0,21,13)
+                        layer.rect(0,0,13,21)
+                        layer.rect(0,0,25,8)
+                        layer.rect(0,0,8,25)
                     break
                 }
                 layer.pop()
@@ -997,6 +1082,12 @@ function setupImage(type){
                 layer.rotate(45)
             }
 
+            /*layer.fill(100,255,255)
+            layer.quad(0,-100,-50,0,0,100,50,0)
+            layer.fill(150,255,255)
+            layer.quad(0,-70,-35,0,0,70,35,0)*/
+            //diamond code
+
             /*layer.fill(160,200,240)
             layer.ellipse(0,50,80,30)
             for(let a=0,la=10;a<la;a++){
@@ -1013,17 +1104,62 @@ function setupImage(type){
             layer.fill(60)
             layer.quad(0,40,-10,70,0,75,10,70)*/
             //antitank code
+            
+            /*layer.fill(0,0,200)
+            layer.quad(-35,35,-25,55,-35,75,-45,55)
+            layer.quad(-20,30,-5,55,-20,80,-35,55)
+            layer.quad(0,30,15,55,0,80,-15,55)
+            layer.quad(20,30,35,55,20,80,5,55)
+            layer.quad(35,35,25,55,35,75,45,55)*/
+            //amphibious code
 
-            key=10
+            /*layer.fill(80)
+            layer.rect(-60,0,10,130)
+            layer.rect(0,-60,130,10)
+            layer.rect(0,60,130,10)*/
+            //border guard code
+
+            /*layer.stroke(40)
+            layer.strokeWeight(5)
+            layer.noFill()
+            layer.ellipse(0,0,150)
+            layer.ellipse(0,0,100,150)
+            layer.ellipse(0,0,150,100)
+            layer.noStroke()*/
+            //fortress sphere code
+
+            key=8
             key=(key>>>0).toString(6)
 
             /*layer.fill(80)
             layer.rect(0,0,key.length*50+20,60,30)*/
             //tank code
 
+            /*layer.fill(80)
+            layer.rect(0,0,key.length*50+10,60,5)
+            layer.fill(150,255,0)
+            layer.rect(0,0,key.length*50,50,5)*/
+            //defense zone code
+
             /*layer.fill(120)
             layer.rect(key.length*-12.5+5,30,key.length*20-10,6,3)
             layer.rect(key.length*12.5-5,30,key.length*20-10,6,3)*/
+            //motorized code
+
+            /*layer.fill(120)
+            layer.rect(key.length*25-5,30,6,6,2)
+            layer.rect(key.length*25-15,30,6,6,2)
+            layer.rect(key.length*25-25,30,6,6,2)
+            layer.triangle(key.length*25-25,36,key.length*25-5,36,key.length*25-15,42)*/
+            //motorcycle code
+
+            layer.fill(120)
+            layer.rect(0,0,key.length*50+10,50,25)
+            layer.fill(160)
+            layer.rect(-20,40,15,6,3)
+            layer.rect(20,40,15,6,3)
+            layer.rect(-40,40,15,6,3)
+            layer.rect(40,40,15,6,3)
             //motorized code
 
             for(let a=0,la=key.length;a<la;a++){
@@ -1069,31 +1205,190 @@ function setupImage(type){
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+            layer.fill(255,230,0)
+            regPoly(layer,0,0,10,150,150,18)
+            for(let a=0,la=5;a<la;a++){
+                layer.triangle(0,0,-150*sin(18),-150*cos(18),150*sin(18),-150*cos(18))
+                layer.rotate(72)
+            }
+            layer.fill(255,125,0)
+            layer.rotate(36)
+            for(let a=0,la=5;a<la;a++){
+                layer.triangle(0,0,-150*sin(18),-150*cos(18),150*sin(18),-150*cos(18))
+                layer.rotate(72)
+            }
+            layer.rotate(-36)
+            layer.fill(150,255,0)
+            layer.ellipse(0,0,200)
+            for(let a=0,la=8;a<la;a++){
+                layer.triangle(0,-120,-20,-95,20,-95)
+                layer.rotate(45)
+            }
+            layer.fill(240)
+            layer.quad(-80,0,0,-80,0,80,80,0)
+            layer.fill(160,200,240)
+            layer.quad(-80,0,0,80,0,-80,80,0)
+            layer.fill(240)
+            layer.quad(-60,0,0,60,0,-60,60,0)
+            layer.fill(160,200,240)
+            layer.quad(-60,0,0,-60,0,60,60,0)
             return layer
         case 25:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+            layer.fill(0,100,200)
+            layer.arc(0,0,270,270,-180,0)
+            layer.fill(240)
+            layer.arc(0,0,270,270,0,180)
+            layer.fill(120,40,40)
+            layer.ellipse(0,0,60)
+            layer.fill(40)
+            //layer.rect(0,0,10,120)
+            //layer.quad(-40,-60,-30,-60,40,60,30,60)
+            //layer.quad(-40,60,-30,60,40,-60,30,-60)
+            //layer.rect(-20,0,10,120)
+            //layer.rect(20,0,10,120)
+            //layer.rect(0,-60,100,10)
+            //layer.rect(0,60,100,10)
+            layer.rect(0,0,140,10)
+            layer.rect(-70,0,10,60)
+            layer.rect(70,0,10,60)
+            layer.quad(-75,-63,-75,-50,75,63,75,50)
             return layer
         case 26:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+            layer.fill(200,0,40)
+            layer.ellipse(0,0,270)
+            layer.fill(250,200,20)
+            layer.ellipse(0,0,240)
+            layer.fill(0,40,120)
+            layer.ellipse(0,0,210)
+            layer.fill(240)
+            layer.ellipse(0,0,180)
+
+            /*layer.stroke(80,120,160)
+            layer.strokeWeight(10)
+            layer.line(25,-40,25,40)
+            layer.line(-30,-40,10,40)
+            layer.line(10,-40,-30,40)*/
+
+            /*layer.fill(240,240,0)
+            layer.arc(0,0,120,120,30,210)
+            layer.fill(120,240,240)
+            layer.arc(0,0,120,120,-150,30)*/
+            //cavalry corps
+
             return layer
         case 27:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+            layer.fill(200,0,40)
+            regPoly(layer,0,0,6,145,145,30)
+            layer.fill(250,200,20)
+            regPoly(layer,0,0,6,125,125,30)
+            layer.fill(0,40,120)
+            regPoly(layer,0,0,6,105,105,30)
+            layer.fill(240)
+            regPoly(layer,0,0,6,85,85,30)
+
+            layer.stroke(80,120,160)
+            layer.strokeWeight(10)
+            layer.line(-25,-40,-25,40)
+            layer.line(30,-40,10,40)
+            layer.line(-10,-40,10,40)
+
             return layer
         case 28:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(200,0,40)
+            regPoly(layer,0,0,8,145,145,0)
+            layer.fill(250,200,20)
+            regPoly(layer,0,0,8,125,125,0)
+            layer.fill(0,40,120)
+            regPoly(layer,0,0,8,105,105,0)
+            layer.fill(240)
+            regPoly(layer,0,0,8,85,85,0)
+
+            //layer.scale(0.8)
+
+            /*layer.fill(240,240,0)
+            layer.arc(0,0,120,120,30,210)
+            layer.fill(120,240,240)
+            layer.arc(0,0,120,120,-150,30)*/
+            //cavalry division
+
+            layer.fill(100)
+            layer.arc(0,0,140,140,0,180)
+            layer.fill(120)
+            layer.arc(0,0,124,124,100,280)
+            layer.fill(140)
+            layer.arc(0,0,106,106,200,380)
+            layer.fill(160)
+            layer.arc(0,0,86,86,300,480)
+            layer.fill(180)
+            layer.arc(0,0,64,64,400,580)
+            layer.fill(200)
+            layer.arc(0,0,40,40,500,680)
+            //tank division
+
+            layer.stroke(80,120,160)
+            layer.strokeWeight(10)
+            
+            //layer.line(-75,-40,-35,40)
+            //layer.line(-35,-40,-75,40)
+            
+            //layer.line(-20,-40,0,40)
+            //layer.line(20,-40,0,40)
+            //layer.line(35,-40,35,40)
+            //layer.line(55,-40,55,40)
+            //layer.line(75,-40,75,40)
+
+            /*layer.line(0,-40,0,40)
+            layer.line(-55,-40,-15,40)
+            layer.line(-15,-40,-55,40)
+            layer.line(55,-40,15,40)
+            layer.line(15,-40,55,40)*/
+
+            /*layer.line(-40,-40,-20,40)
+            layer.line(0,-40,-20,40)
+            layer.line(20,-40,20,40)
+            layer.line(40,-40,40,40)*/
+
+            layer.line(0,-40,0,40)
+            
             return layer
         case 29:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(200,0,40)
+            regPoly(layer,0,0,12,145,145,0)
+            layer.fill(250,200,20)
+            regPoly(layer,0,0,12,125,125,0)
+            layer.fill(0,40,120)
+            regPoly(layer,0,0,12,105,105,0)
+            layer.fill(240)
+            regPoly(layer,0,0,12,85,85,0)
+
+            layer.fill(120)
+            layer.rect(-30,0,20,120)
+            layer.rect(30,0,20,120)
+            layer.rect(0,-30,120,20)
+            layer.rect(0,30,120,20)
+
+            layer.stroke(80,120,160)
+            layer.strokeWeight(10)
+            layer.line(-10,-40,-10,40)
+            layer.line(10,-40,10,40)
+
             return layer
         case 30:
             layer=createGraphics(300,300)
