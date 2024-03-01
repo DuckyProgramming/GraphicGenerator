@@ -1870,6 +1870,199 @@ function setupImage(type){
             layer.triangle(-65,-12.5,-35,-12.5,-50,-36)*/
             //521
 
+            /*layer.fill(255)
+            layer.stroke(0)
+            layer.strokeWeight(2)
+            layer.beginShape()
+            layer.vertex(-15,-62.5)
+            layer.vertex(-15,-90)
+            layer.vertex(-30,-90)
+            layer.vertex(-30,-10)
+            layer.vertex(-15,-10)
+            layer.vertex(-15,-37.5)
+            layer.vertex(12.5,-10)
+            layer.vertex(32.5,-10)
+            layer.vertex(-7.5,-50)
+            layer.vertex(32.5,-90)
+            layer.vertex(12.5,-90)
+            layer.endShape(CLOSE)
+
+            layer.beginShape()
+            layer.vertex(17.5,90)
+            layer.vertex(35,90)
+            layer.vertex(10,50)
+            layer.vertex(35,10)
+            layer.vertex(17.5,10)
+            layer.vertex(0,37.5)
+            layer.vertex(-17.5,10)
+            layer.vertex(-35,10)
+            layer.vertex(-10,50)
+            layer.vertex(-35,90)
+            layer.vertex(-17.5,90)
+            layer.vertex(0,62.5)
+            layer.endShape(CLOSE)*/
+            //810
+
+            /*layer.fill(0)
+            layer.rect(0,-60,120,14)
+            layer.rect(0,0,120,14)
+            layer.rect(0,60,120,14)
+            layer.rect(-53,-72,14,35)
+            layer.rect(-53,-12,14,35)
+            layer.rect(-53,48,14,35)
+            layer.rect(53,-48,14,35)
+            layer.rect(53,12,14,35)
+            layer.rect(53,72,14,35)
+            layer.rect(0,-60,14,42)
+            layer.rect(0,0,14,42)
+            layer.rect(0,60,14,42)
+
+            layer.fill(0,255,50)
+            layer.rect(0,-60,116,10)
+            layer.rect(-53,-72,10,31)
+            layer.rect(53,-48,10,31)
+            layer.rect(0,-60,10,38)
+
+            layer.fill(0,150,200)
+            layer.rect(0,0,116,10)
+            layer.rect(-53,-12,10,31)
+            layer.rect(53,12,10,31)
+            layer.rect(0,0,10,38)
+
+            layer.fill(50,0,255)
+            layer.rect(0,60,116,10)
+            layer.rect(-53,48,10,31)
+            layer.rect(53,72,10,31)
+            layer.rect(0,60,10,38)*/
+            //165
+
+            /*layer.fill(0)
+            layer.rect(-30,-10,25,120)
+            layer.rect(30,10,25,120)
+            layer.ellipse(-30,50,40)
+            layer.ellipse(30,-50,40)
+            layer.translate(-30,50)
+            for(let a=0,la=10;a<la;a++){
+                layer.triangle(-18,-6,-18,6,-30,0)
+                layer.rotate(36)
+            }
+            layer.translate(60,-100)
+            for(let a=0,la=10;a<la;a++){
+                layer.triangle(-18,-6,-18,6,-30,0)
+                layer.rotate(36)
+            }*/
+            //274
+
+            /*layer.noFill()
+            layer.stroke(0)
+            layer.strokeWeight(3)
+            layer.ellipse(0,0,65,65)
+            layer.ellipse(0,0,90,90)
+            layer.quad(0,0,10,90,0,80,-10,90)
+            layer.quad(0,0,10,-90,0,-80,-10,-90)*/
+            //326
+
+            /*layer.stroke(0)
+            layer.strokeWeight(3)
+            layer.fill(150,255,150)
+            layer.arc(-65,60,270,270,-24,0)
+            layer.line(-65,60,70,60)
+            layer.line(-65,60,-65+cos(24)*135,60-sin(24)*135)
+            layer.fill(255,200,200)
+            layer.arc(-69,54,270,270,-57,-33)
+            layer.line(-69,54,-69+cos(33)*135,54-sin(33)*135)
+            layer.line(-69,54,-69+cos(57)*135,54-sin(57)*135)
+            layer.fill(150,255,255)
+            layer.arc(-75,50,270,270,-90,-66)
+            layer.line(-75,50,-75,-85)
+            layer.line(-75,50,-75+cos(66)*135,50-sin(66)*135)*/
+            //545
+
+            /*layer.fill(0)
+            layer.ellipse(25,80,36)
+            layer.ellipse(-50,5,36)
+            layer.ellipse(25,-70,36)
+            layer.rect(25,50,24,60)
+            layer.triangle(5,20,45,20,25,-10)
+            layer.stroke(0)
+            layer.strokeWeight(24)
+            layer.line(25,80,-50,5)
+            layer.line(25,-70,-50,5)
+            layer.noStroke()
+            layer.fill(255)
+            layer.ellipse(25,80,31)
+            layer.ellipse(-50,5,31)
+            layer.ellipse(25,-70,31)
+            layer.rect(25,47,19,66)
+            layer.triangle(10,17.5,40,17.5,25,-5.5)
+            layer.stroke(255)
+            layer.strokeWeight(19)
+            layer.line(25,80,-50,5)
+            layer.line(25,-70,-50,5)*/
+            //551
+
+            /*layer.translate(-70,60)
+            layer.rotate(-7.5)
+            for(let a=0,la=6;a<la;a++){
+                layer.fill(0)
+                layer.triangle(0,0,135,15,135,-15)
+                layer.arc(135,0,30,30,-90,90)
+                layer.fill(255)
+                layer.triangle(20,0,135,13,135,-13)
+                layer.arc(135,0,26,26,-90,90)              
+                layer.fill(95,175,20)
+                layer.arc(135,0,26,26,-90,90)
+                for(let b=0,lb=30;b<lb;b++){
+                    layer.fill(95+b*8,175+b*4,20+b*23.5/2)
+                    layer.quad(
+                        136-b*2,-13+b*26/115,
+                        136-b*2,13-b*26/115,
+                        133-b*2,13-(b+1)*26/115,
+                        133-b*2,-13+(b+1)*26/115
+                    )
+                }
+                layer.rotate(-15)
+            }*/
+            //601
+
+            /*layer.stroke(0)
+            layer.strokeWeight(4)
+            layer.fill(255)
+            layer.textSize(200)
+            layer.text('&',0,20)*/
+            //738
+            
+            /*layer.stroke(0)
+            layer.strokeWeight(4)
+            layer.fill(255)
+            layer.textSize(160)
+            layer.text('@',0,0)*/
+            //748
+
+            /*layer.strokeCap(PROJECT)
+            layer.noFill()
+
+            layer.stroke(0)
+            layer.strokeWeight(20)
+            layer.line(0,-80,0,80)
+            layer.arc(-10,-30,100,100,-135,-90)
+            layer.arc(-10,30,100,100,-135,-90)
+            layer.arc(-10,90,100,100,-135,-90)
+            layer.arc(10,-90,100,100,45,90)
+            layer.arc(10,-30,100,100,45,90)
+            layer.arc(10,30,100,100,45,90)
+
+            layer.stroke(200,255,100)
+            layer.strokeWeight(16)
+            layer.line(0,-80,0,80)
+            layer.arc(-10,-30,100,100,-135,-90)
+            layer.arc(-10,30,100,100,-135,-90)
+            layer.arc(-10,90,100,100,-135,-90)
+            layer.arc(10,-90,100,100,45,90)
+            layer.arc(10,-30,100,100,45,90)
+            layer.arc(10,30,100,100,45,90)*/
+            //761
+
             return layer
         case 39:
             layer=createGraphics(300,300)
@@ -1887,7 +2080,7 @@ function setupImage(type){
             layer.line(0,-100,0,100)*/
             //313
 
-            layer.fill(0)
+            /*layer.fill(0)
             layer.quad(-32,-90,-10,-90,-53,60,-75,60)
             layer.quad(88,-90,110,-90,67,60,45,60)
 
@@ -1899,8 +2092,7 @@ function setupImage(type){
             layer.arc(60,60,120,120,0,180)
 
             layer.line(-100,-100,-20,-100)
-            layer.line(100,-100,20,-100)
-
+            layer.line(100,-100,20,-100)*/
             //773
 
             return layer
@@ -1931,6 +2123,16 @@ function setupImage(type){
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            for(let a=0,la=6;a<la;a++){
+                layer.fill([255,0][a%2],[255,200][a%2],[255,240][a%2])
+                layer.arc(0,0,280,280,0,60)
+                layer.fill([255,0][1-a%2],[255,200][1-a%2],[255,240][1-a%2])
+                layer.quad(40,0,60,0,30,30*sqrt(3),20,20*sqrt(3))
+                layer.rotate(30)
+                layer.quad(65,0,95,-15,125,0,95,15)
+                layer.rotate(30)
+            }
             return layer
         case 42:
             layer=createGraphics(300,300)
