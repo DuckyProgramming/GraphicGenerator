@@ -1,3 +1,3 @@
-display={type:50}
+display={type:55}
 saving={progress:0}
 graphics={main:0}

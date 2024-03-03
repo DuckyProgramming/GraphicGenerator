@@ -636,12 +636,28 @@ function setupImage(type){
                 layer.rotate(120)
             }
             layer.rotate(-60)
-            layer.fill(150,255,0)
-            layer.ellipse(0,0,200)
+
+            /*layer.fill(100)
             for(let a=0,la=8;a<la;a++){
-                layer.triangle(0,-120,-20,-95,20,-95)
+                layer.ellipse(0,-95,60)
+                layer.rotate(45)
+            }*/
+            //breakthrough artillery code
+
+            layer.fill(150,255,0)
+            for(let a=0,la=8;a<la;a++){
+                layer.ellipse(0,-95,50,50)
                 layer.rotate(45)
             }
+
+            /*layer.fill(100)
+            for(let a=0,la=8;a<la;a++){
+                layer.arc(0,0,204,204,-15+a*45,15+a*45)
+            }*/
+            //breakthrough artillery code
+
+            layer.fill(150,255,0)
+            layer.ellipse(0,0,200)
 
             /*layer.fill(160,200,240)
             layer.ellipse(0,50,80,30)
@@ -656,15 +672,15 @@ function setupImage(type){
             layer.rotate(-45)*/
             //cavalry code
 
-            layer.fill(0,200,255)
+            /*layer.fill(0,200,255)
             layer.quad(0,0,-80,-10,-80,-30)
             layer.quad(0,0,-80,10,-80,30)
             layer.quad(0,0,80,-10,80,-30)
             layer.quad(0,0,80,10,80,30)
-            layer.ellipse(0,0,20)
+            layer.ellipse(0,0,20)*/
             //support group code
 
-            key=6
+            key=2
             key=(key>>>0).toString(6)
 
             /*layer.fill(80)
@@ -727,12 +743,39 @@ function setupImage(type){
             for(let a=0,la=4;a<la;a++){
                 layer.arc(0,0,280,280,22.5+a*90,67.5+a*90)
             }
+
+            /*layer.fill(100)
+            for(let a=0,la=8;a<la;a++){
+                layer.ellipse(0,-95,60)
+                layer.rotate(45)
+            }*/
+            //breakthrough artillery code
+
             layer.fill(150,255,0)
-            layer.ellipse(0,0,200)
             for(let a=0,la=8;a<la;a++){
                 layer.ellipse(0,-95,50,50)
                 layer.rotate(45)
             }
+
+            /*layer.fill(100)
+            for(let a=0,la=8;a<la;a++){
+                layer.arc(0,0,204,204,-15+a*45,15+a*45)
+            }*/
+            //breakthrough artillery code
+
+            /*for(let a=0,la=8;a<la;a++){
+                layer.fill(180,60,30)
+                layer.triangle(0,-115,-10,-95,10,-95)
+                layer.fill(240,90,60)
+                layer.triangle(0,-115,-5,-95,5,-95)
+                layer.fill(120,30,0)
+                layer.ellipse(0,-114,4)
+                layer.rotate(45)
+            }*/
+            //mortar code
+
+            layer.fill(150,255,0)
+            layer.ellipse(0,0,200)
 
             /*layer.fill(100,255,255)
             layer.quad(0,-100,-50,0,0,100,50,0)
@@ -781,7 +824,7 @@ function setupImage(type){
             }*/
             //shotgun code
 
-            key=75
+            key=3
             key=(key>>>0).toString(6)
             //key='z'
 
@@ -796,7 +839,7 @@ function setupImage(type){
             layer.rect(key.length*12.5-5,30,key.length*20-10,6,3)*/
             //motorized code
 
-            layer.fill(200)
+            /*layer.fill(200)
             layer.ellipse(key.length*25+10,-10,10)
             layer.ellipse(key.length*25+10,10,10)
             layer.ellipse(key.length*-25-10,-10,10)
@@ -804,7 +847,7 @@ function setupImage(type){
             layer.ellipse(key.length*25+5,-20,10)
             layer.ellipse(key.length*25+5,20,10)
             layer.ellipse(key.length*-25-5,-20,10)
-            layer.ellipse(key.length*-25-5,20,10)
+            layer.ellipse(key.length*-25-5,20,10)*/
             //dispersal code
 
             for(let a=0,la=key.length;a<la;a++){
@@ -1153,13 +1196,13 @@ function setupImage(type){
             layer.triangle(key.length*25-25,36,key.length*25-5,36,key.length*25-15,42)*/
             //motorcycle code
 
-            layer.fill(120)
+            /*layer.fill(120)
             layer.rect(0,0,key.length*50+10,50,25)
             layer.fill(160)
             layer.rect(-20,40,15,6,3)
             layer.rect(20,40,15,6,3)
             layer.rect(-40,40,15,6,3)
-            layer.rect(40,40,15,6,3)
+            layer.rect(40,40,15,6,3)*/
             //motorized code
 
             for(let a=0,la=key.length;a<la;a++){
@@ -2446,26 +2489,174 @@ function setupImage(type){
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(255,225,0)
+            layer.strokeWeight(20)
+            layer.strokeCap(PROJECT)
+            layer.line(120,-120,50,-120)
+            layer.line(120,-120,120,-50)
+
+            //layer.line(60,-60,-10,-60)
+            //layer.line(60,-60,60,10)
+            layer.line(0,0,-70,0)
+            layer.line(0,0,0,70)
+
+            layer.line(110,-110,-60,60)
+            layer.line(-60,60,-130,60)
+            layer.line(-60,60,-60,130)
+
             return layer
         case 51:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.scale(1,-1)
+            layer.stroke(255,200,0)
+            layer.strokeWeight(1)
+            layer.strokeCap(PROJECT)
+            layer.fill(255,200,0)
+
+            layer.quad(140,140,40,140,10,110,110,110)
+            layer.quad(140,140,140,40,110,10,110,110)
+            layer.quad(-140,-140,-40,-140,-10,-110,-110,-110)
+            layer.quad(-140,-140,-140,-40,-110,-10,-110,-110)
+
+            layer.strokeWeight(30)
+            layer.line(120,120,-120,-120)
+            layer.line(60,-20,-20,60)
+            layer.line(20,-60,-60,20)
+
             return layer
         case 52:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(255,200,0)
+            layer.strokeWeight(30)
+            layer.strokeCap(PROJECT)
+            layer.noFill()
+
+            layer.beginShape()
+
+            layer.vertex(-120,-30)
+            layer.vertex(-20,-130)
+            layer.vertex(130,-130)
+            layer.vertex(130,20)
+            layer.vertex(30,120)
+
+            layer.endShape()
+
+            layer.triangle(40,-40,10,50,-50,-10)
+
             return layer
         case 53:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(255,200,0)
+            layer.strokeWeight(30)
+            layer.strokeCap(PROJECT)
+            layer.noFill()
+
+            layer.beginShape()
+
+            layer.vertex(-120,-60)
+            layer.vertex(-60,-120)
+            layer.vertex(60,-120)
+            layer.vertex(120,-60)
+
+            layer.endShape()
+
+            layer.beginShape()
+
+            layer.vertex(-90,-30)
+            layer.vertex(-40,-80)
+            layer.vertex(40,-80)
+            layer.vertex(90,-30)
+
+            layer.endShape()
+
+            layer.line(0,-120,0,120)
+            layer.line(-40,40,40,40)
+
             return layer
         case 54:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+            layer.fill(255,0,230)
+            for(let a=0,la=3;a<la;a++){
+                layer.arc(0,0,280,280,-60+a*120,a*120)
+            }
+            layer.fill(255,0,125)
+            for(let a=0,la=3;a<la;a++){
+                layer.arc(0,0,280,280,a*120,60+a*120)
+            }
+
+            layer.fill(150,0,0)
+            for(let a=0,la=8;a<la;a++){
+                layer.ellipse(0,-95,50,50)
+                layer.rotate(45)
+            }
+
+            for(let a=0,la=8;a<la;a++){
+                layer.fill(180,60,90)
+                layer.triangle(0,-115,-10,-95,10,-95)
+                layer.fill(240,90,180)
+                layer.triangle(0,-115,-5,-95,5,-95)
+                layer.fill(240,120,180)
+                layer.ellipse(0,-114,4)
+                layer.rotate(45)
+            }
+            //mortar code
+
+            layer.fill(150,0,0)
+            layer.ellipse(0,0,200)
+
+            key=11
+            key=(key>>>0).toString(6)
+
+            for(let a=0,la=key.length;a<la;a++){
+                layer.push()
+                layer.translate(-la*25+25+a*50,0)
+                layer.rotate(45)
+                layer.fill(0)
+                layer.ellipse(0,0,40)
+                layer.fill(240)
+                switch(key[a]){
+                    case '0':
+                        layer.quad(-5,0,0,-10,5,0,0,10)
+                    break
+                    case '1':
+                        layer.rect(0,0,25,5)
+                    break
+                    case '2':
+                        layer.rect(0,0,25,5)
+                        layer.rect(-10,0,5,20)
+                    break
+                    case '3':
+                        layer.rect(0,0,25,5)
+                        layer.rect(-10,0,5,20)
+                        layer.rect(10,0,5,20)
+                    break
+                    case '4':
+                        layer.rect(0,-5,15,5)
+                        layer.rect(0,2.5,20,5)
+                        layer.rect(0,0,5,25)
+                    break
+                    case '5':
+                        layer.rect(0,0,5,5)
+                        layer.rect(0,-7.5,20,5)
+                        layer.rect(0,7.5,20,5)
+                        layer.rect(-7.5,0,5,20)
+                        layer.rect(7.5,0,5,20)
+                    break
+                }
+                layer.pop()
+            }
             return layer
         case 55:
             layer=createGraphics(300,300)
