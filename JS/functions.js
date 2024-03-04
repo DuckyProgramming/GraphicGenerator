@@ -11,6 +11,9 @@ function regPoly(layer,x,y,sides,radiusX,radiusY,direction){
     }
     layer.endShape(CLOSE)
 }
+function diamond(layer,x,y,width,height){
+    layer.quad(x-width/2,y,x,y-height/2,x+width/2,y,x,y+height/2)
+}
 function setupBase(){
     colorMode(RGB,255,255,255,1)
     angleMode(DEGREES)
