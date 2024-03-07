@@ -1,4 +1,4 @@
-display={type:91}
-//marker 91
+display={type:106}
+//marker []
 saving={progress:0}
 graphics={main:0,i1:0}
