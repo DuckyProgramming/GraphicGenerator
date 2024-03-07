@@ -1,3 +1,8 @@
+function preload(){
+    if(display.type==91){
+        graphics.i1=loadImage('../Assets/SSTemplate.png')
+    }
+}
 function setup(){
     createCanvas(windowWidth-50,windowHeight-50)
     setupBase()

@@ -11,6 +11,13 @@ function regPoly(layer,x,y,sides,radiusX,radiusY,direction){
     }
     layer.endShape(CLOSE)
 }
+function regStar(layer,x,y,sides,radiusX,radiusY,radius2X,radius2Y,direction){
+	layer.beginShape()
+	for(k=0;k<sides*2;k++){
+		layer.vertex(x+sin(direction+k*180/sides)*(k%2==0?radiusX:radius2X),y+cos(direction+k*180/sides)*(k%2==0?radiusY:radius2Y))
+	}
+	layer.endShape(CLOSE)
+}
 function diamond(layer,x,y,width,height){
     layer.quad(x-width/2,y,x,y-height/2,x+width/2,y,x,y+height/2)
 }
