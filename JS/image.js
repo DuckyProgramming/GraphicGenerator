@@ -5432,26 +5432,133 @@ function setupImage(type){
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.scale(2)
+            layer.strokeWeight(0.6)
+            layer.strokeJoin(ROUND)
+            layer.fill(255,75,175)
+            for(let a=0,la=5;a<la;a++){
+                layer.beginShape()
+                layer.vertex(0,0)
+                layer.bezierVertex(-21,-30,-28,-40,-7,-70)
+                layer.vertex(0,-56)
+                layer.vertex(7,-70)
+                layer.bezierVertex(28,-40,21,-30,0,0)
+                layer.endShape(CLOSE)
+                layer.rotate(72)
+            }
+            layer.noStroke()
+            layer.fill(255,125,225)
+            for(let a=0,la=5;a<la;a++){
+                layer.rotate(60)
+                layer.quad(0,-4,-3,-16,0,-24,3,-16)
+                layer.rotate(12)
+            }
+            layer.ellipse(0,0,6)
+            
             return layer
         case 107:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.rotate(-105)
+            layer.fill(255,225,50)
+            for(let a=0,la=6;a<la;a++){
+                layer.ellipse((a-2.5)*30+20,(a-2.5)*30,40,20)
+                layer.ellipse((a-2.5)*30+10,(a-2.5)*30+30,20,40)
+            }
+            layer.rotate(-45)
+            layer.fill(150,255,50)
+            layer.rect(0,0,14,320,7)
+
             return layer
         case 108:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.scale(45)
+            layer.fill(133,147,205)
+            regPoly(layer,0,0,10,3,3,0)
+            layer.fill(227,206,225,this.fade)
+            for(let a=0,la=10;a<la;a++){
+                layer.rotate(360/la)
+                layer.ellipse(0,1.2+a%2*0.6,0.6-a%2*0.45,2.7-a%2*0.9)
+            }
+            layer.fill(177,130,124)
+            for(let a=0,la=5;a<la;a++){
+                layer.rotate(360/la)
+                layer.ellipse(0,0.15,0.15,0.3)
+            }
+
             return layer
         case 109:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.scale(60)
+            layer.fill(27,42,143)
+            layer.ellipse(0,0,2)
+            layer.fill(164,184,217)
+            for(let a=0,la=5;a<la;a++){
+                layer.rotate(360/la)
+                layer.triangle(-0.2,0,0.2,0,0,1)
+            }
+            for(let a=0,la=3;a<la;a++){
+                layer.rotate(360/la)
+                layer.translate(0,1.2)
+                layer.fill(27,42,143)
+                layer.ellipse(0,0.5,0.5,1)
+                layer.rotate(-66)
+                layer.ellipse(0,0.3,0.3,0.6)
+                layer.rotate(132)
+                layer.ellipse(0,0.3,0.3,0.6)
+                layer.rotate(-66)
+                layer.fill(146,179,211)
+                layer.triangle(-0.1,-0.05,0.1,-0.05,0,0.8)
+                layer.translate(0,-1.2)
+            }
+
             return layer
         case 110:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.noFill()
+            layer.stroke(25,75,225)
+            layer.strokeWeight(30)
+            layer.beginShape()
+            layer.vertex(-120,-120)
+            layer.vertex(0,-80)
+            layer.vertex(120,-120)
+            layer.vertex(80,0)
+            layer.vertex(120,120)
+            layer.vertex(0,80)
+            layer.vertex(-120,120)
+            layer.vertex(-80,0)
+            layer.endShape(CLOSE)
+            layer.stroke(50,100,225)
+            layer.strokeWeight(20)
+            layer.beginShape()
+            layer.vertex(-120,-120)
+            layer.vertex(0,-80)
+            layer.vertex(120,-120)
+            layer.vertex(80,0)
+            layer.vertex(120,120)
+            layer.vertex(0,80)
+            layer.vertex(-120,120)
+            layer.vertex(-80,0)
+            layer.endShape(CLOSE)
+            layer.noStroke()
+            layer.fill(225,175,50)
+            regStar(layer,-35,0,4,15,30,5,10,0)
+            regStar(layer,35,0,4,15,30,5,10,0)
+            layer.fill(25)
+            regStar(layer,0,0,4,15,30,5,10,0)
+
             return layer
         case 111:
             layer=createGraphics(300,300)
