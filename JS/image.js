@@ -357,7 +357,7 @@ function setupImage(type){
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
-            key=60-32
+            key=50-32
             key=(key>>>0).toString(2)
             layer.fill(0)
             layer.ellipse(0,0,160)
@@ -1171,7 +1171,7 @@ function setupImage(type){
             layer.noStroke()*/
             //fortress sphere code
 
-            key=8
+            key=546
             key=(key>>>0).toString(6)
 
             /*layer.fill(80)
@@ -3033,15 +3033,15 @@ function setupImage(type){
             }*/
             //regiment
 
-            layer.rect(-10,0,12,190)
-            layer.rect(10,0,12,190)
+            //layer.rect(-10,0,12,190)
+            //layer.rect(10,0,12,190)
             //battalion
 
-            /*layer.rotate(-6)
+            layer.rotate(-6)
             layer.quad(0,-138,-10,0,0,138,10,0)
             layer.rotate(12)
             layer.quad(0,-138,-10,0,0,138,10,0)
-            layer.rotate(-6)*/
+            layer.rotate(-6)
             //detachment
             
             layer.fill(255,150,150)
@@ -3060,14 +3060,14 @@ function setupImage(type){
             layer.ellipse(80,80,10)*/
             //mixed
 
-            /*layer.arc(-60,90,60,20,0,180)
+            layer.arc(-60,90,60,20,0,180)
             layer.ellipse(-80,90,20,10)
             layer.ellipse(-60,90,20,10)
             layer.ellipse(-40,90,20,10)
             layer.arc(60,90,60,20,0,180)
             layer.ellipse(80,90,20,10)
             layer.ellipse(60,90,20,10)
-            layer.ellipse(40,90,20,10)*/
+            layer.ellipse(40,90,20,10)
             //landing
 
             /*layer.rect(0,105,70,20,10)
@@ -3171,14 +3171,15 @@ function setupImage(type){
             //layer.text('2',0,125)
             
             layer.textSize(60)
-            //layer.text('10',0,0)
+            //layer.text('96',0,0)
             //layer.text('択捉',0,0)
             //layer.text('坂口',0,0)
             //layer.text('夏月',0,0)
             //layer.text('朝霧',0,0)
+            layer.text('谷風',0,0)
 
             layer.textSize(50)
-            layer.text('314',0,0)
+            //layer.text('314',0,0)
 
             layer.stroke(0)
             layer.strokeWeight(2.5)
@@ -6543,23 +6544,423 @@ function setupImage(type){
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(50,150,250)
+            regTriangle(layer,-50,-22,80,80,0)
+            layer.fill(100)
+            regTriangle(layer,50,22,80,80,60)
+            regTriangle(layer,-50,-22,40,40,0)
+            layer.fill(50,150,250)
+            regTriangle(layer,50,22,40,40,60)
+
             return layer
         case 137:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(225,100,225)
+            layer.triangle(-140,0,0,-140,0,0)
+            layer.triangle(140,0,0,140,0,0)
+            layer.fill(240)
+            layer.triangle(-140,0,0,140,0,0)
+            layer.triangle(140,0,0,-140,0,0)
+
+            layer.fill(255,175,50)
+            layer.triangle(-70,0,0,70,0,0)
+            layer.triangle(70,0,0,-70,0,0)
+            layer.fill(240)
+            layer.triangle(-70,0,0,-70,0,0)
+            layer.triangle(70,0,0,70,0,0)
+
             return layer
         case 138:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(100,225,100)
+            layer.triangle(-140,0,0,-140,0,0)
+            layer.triangle(140,0,0,140,0,0)
+            layer.fill(240)
+            layer.triangle(-140,0,0,140,0,0)
+            layer.triangle(140,0,0,-140,0,0)
+
+            layer.fill(0,125,125)
+            layer.triangle(-70,0,0,70,0,0)
+            layer.triangle(70,0,0,-70,0,0)
+            layer.fill(240)
+            layer.triangle(-70,0,0,-70,0,0)
+            layer.triangle(70,0,0,70,0,0)
+
             return layer
         case 139:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(175,255,50)
+            layer.triangle(-140,0,0,-140,0,0)
+            layer.triangle(140,0,0,140,0,0)
+            layer.fill(240)
+            layer.triangle(-140,0,0,140,0,0)
+            layer.triangle(140,0,0,-140,0,0)
+
+            layer.fill(200,50,100)
+            layer.triangle(-70,0,0,70,0,0)
+            layer.triangle(70,0,0,-70,0,0)
+            layer.fill(240)
+            layer.triangle(-70,0,0,-70,0,0)
+            layer.triangle(70,0,0,70,0,0)
+
             return layer
         case 140:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(140,220,140)
+            layer.ellipse(0,0,240)
+            layer.stroke(230,240,230)
+            layer.strokeWeight(15)
+            layer.line(30,-75,30,75)
+            layer.line(30,75,60,75)
+            layer.line(30,-75,-60,-75)
+            layer.line(30,-30,-60,-30)
+
+            return layer
+        case 141:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(140,220,220)
+            layer.ellipse(0,0,240)
+            layer.stroke(230,240,240)
+            layer.strokeWeight(15)
+            layer.rect(0,0,100,140,4)
+            layer.line(-50,-20,50,20)
+
+            return layer
+        case 142:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(140,120,100)
+            layer.ellipse(0,0,240)
+            layer.stroke(240,230,220)
+            layer.strokeWeight(15)
+            layer.line(40,-75,40,75)
+            layer.line(40,-75,-60,-50)
+            layer.line(40,-35,-60,-10)
+            layer.line(40,5,-60,30)
+
+            return layer
+        case 143:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(220,140,220)
+            layer.ellipse(0,0,240)
+            layer.stroke(240,230,240)
+            layer.strokeWeight(15)
+            layer.line(50,-75,50,75)
+            layer.line(50,-75,-75,-25)
+            layer.line(50,25,-75,-25)
+            
+            return layer
+        case 144:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(240,140,40)
+            layer.ellipse(0,0,240)
+            layer.stroke(240,230,220)
+            layer.strokeWeight(15)
+            layer.line(15,15,-90,15)
+            layer.line(-15,-60,-90,15)
+            layer.line(-15,-15,90,-15)
+            layer.line(15,60,90,-15)
+            
+            return layer
+        case 145:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(100,40,40)
+            layer.ellipse(0,0,240)
+            layer.stroke(240,230,230)
+            layer.strokeWeight(15)
+            layer.line(-50,-50,50,50)
+            layer.line(-50,50,50,-50)
+            
+            return layer
+        case 146:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(180,220,200)
+            layer.ellipse(0,0,240)
+            layer.stroke(220,240,230)
+            layer.strokeWeight(15)
+            layer.line(-60,-75,-37.5,0)
+            layer.line(-15,-75,-37.5,0)
+            layer.line(-15,-75,7.5,0)
+            layer.line(30,-75,7.5,0)
+            layer.line(30,-75,60,30)
+            layer.line(15,90,60,30)
+            
+            return layer
+        case 147:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(0)
+            for(let a=0,la=10;a<la;a++){
+                layer.ellipse(-100,0,90,60)
+                layer.rotate(36)
+            }
+            layer.fill(255)
+            for(let a=0,la=10;a<la;a++){
+                layer.ellipse(-100,0,85,55)
+                layer.rotate(36)
+            }
+            layer.fill(0)
+            layer.ellipse(0,0,200)
+            layer.fill(255)
+            layer.ellipse(0,0,195)
+            layer.rotate(45)
+            layer.stroke(0)
+            layer.strokeWeight(3)
+            layer.line(0,-98,0,98)
+            layer.line(-50,-83,-50,83)
+            layer.line(50,-83,50,83)
+            layer.rotate(90)
+            layer.line(0,-98,0,98)
+            layer.line(-50,-83,-50,83)
+            layer.line(50,-83,50,83)
+
+            return layer
+        case 148:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(255,255,50)
+            layer.stroke(0)
+            layer.strokeWeight(2)
+            layer.quad(0,0,-125,-75,-100,0,-125,75)
+            layer.quad(0,0,125,-75,100,0,125,75)
+            layer.noStroke()
+            layer.fill(225,225,25)
+            layer.quad(-20,0,-100,-40,-80,0,-100,40)
+            layer.quad(20,0,100,-40,80,0,100,40)
+
+            layer.scale(0.5)
+            layer.fill(0)
+            for(let a=0,la=10;a<la;a++){
+                layer.ellipse(-100,0,90,60)
+                layer.rotate(36)
+            }
+            layer.fill(255,175,50)
+            for(let a=0,la=10;a<la;a++){
+                layer.ellipse(-100,0,82,52)
+                layer.rotate(36)
+            }
+            layer.fill(0)
+            layer.ellipse(0,0,200)
+            layer.fill(175,125,75)
+            layer.ellipse(0,0,192)
+            layer.rotate(45)
+            layer.stroke(0)
+            layer.strokeWeight(4)
+            layer.line(0,-80,0,80)
+            layer.line(-50,-65,-50,65)
+            layer.line(50,-65,50,65)
+            layer.rotate(90)
+            layer.line(0,-80,0,80)
+            layer.line(-50,-65,-50,65)
+            layer.line(50,-65,50,65)
+            
+            return layer
+        case 149:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.translate(40,0)
+            layer.scale(1.2)
+
+            layer.rotate(10)
+
+            layer.fill(0)
+            layer.ellipse(-70,0,142.5,62.5)
+            for(let a=0,la=10;a<la;a++){
+                layer.fill(50+a*4,200+a*2,50+a*4)
+                layer.ellipse(-70,0,140*(1-a/la),60*(1-a/la))
+            }
+            layer.fill(125,255,125)
+            layer.ellipse(-70,0,120,4)
+            layer.push()
+            layer.translate(-70,0)
+            layer.rotate(-45)
+            layer.ellipse(0,-15,4,30)
+            layer.ellipse(-15,0,30,4)
+            layer.rotate(45)
+            layer.translate(-25,0)
+            layer.rotate(-45)
+            layer.ellipse(0,-10,4,20)
+            layer.ellipse(-10,0,20,4)
+            layer.pop()
+
+            layer.rotate(-40)
+            layer.scale(0.8)
+            layer.fill(0)
+            layer.ellipse(-70,0,142.5,62.5)
+            for(let a=0,la=10;a<la;a++){
+                layer.fill(50+a*4,200+a*2,50+a*4)
+                layer.ellipse(-70,0,140*(1-a/la),60*(1-a/la))
+            }
+            layer.fill(125,255,125)
+            layer.ellipse(-70,0,120,4)
+            layer.push()
+            layer.translate(-70,0)
+            layer.rotate(-45)
+            layer.ellipse(0,-15,4,30)
+            layer.ellipse(-15,0,30,4)
+            layer.rotate(45)
+            layer.translate(-25,0)
+            layer.rotate(-45)
+            layer.ellipse(0,-10,4,20)
+            layer.ellipse(-10,0,20,4)
+            layer.pop()
+            layer.rotate(25)
+
+            layer.scale(0.65)
+
+            layer.fill(0)
+            layer.ellipse(0,0,275)
+            layer.fill(255,255,100)
+            layer.ellipse(0,0,270)
+            layer.fill(0)
+            layer.ellipse(0,0,200)
+            layer.fill(255,255,50)
+            layer.arc(0,0,195,195,0,225)
+            layer.fill(100,255,100)
+            layer.arc(0,0,195,195,-135,-90)
+            layer.fill(255,100,100)
+            layer.arc(0,0,195,195,-90,-45)
+            layer.fill(100,200,255)
+            layer.arc(0,0,195,195,-45,0)
+            layer.fill(0)
+            for(let a=0,la=8;a<la;a++){
+                layer.rect(0,49,12,98)
+                layer.rotate(45)
+            }
+            layer.fill(255,255,100)
+            for(let a=0,la=8;a<la;a++){
+                layer.rect(0,55,7,110)
+                layer.rotate(45)
+            }
+            
+
+            return layer
+        case 150:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(200,40,160)
+            layer.ellipse(0,0,240)
+            layer.stroke(240,230,230)
+            layer.strokeWeight(15)
+            layer.line(15,-90,-60,70)
+            layer.line(60,70,-60,70)
+            
+            return layer
+        case 151:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(120,100,80)
+            layer.ellipse(0,0,240)
+            layer.stroke(240,230,220)
+            layer.strokeWeight(15)
+            layer.line(0,-80,0,80)
+            layer.line(-60,-60,60,-60)
+            layer.line(-60,-25,60,-25)
+            layer.line(-60,10,60,10)
+            
+            return layer
+        case 152:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(0)
+            layer.rect(0,-50,200,80)
+            layer.arc(0,-90,200,40,-180,0)
+            layer.arc(0,-10,200,280,0,180)
+            layer.fill(240)
+            layer.rect(0,-50,195,80)
+            layer.arc(0,-90,195,35,-180,0)
+            layer.arc(0,-10,195,275,0,180)
+
+            layer.fill(50,200,50)
+            regPoly(layer,0,0,3,50,50,60)
+            layer.fill(255,50,100)
+            for(let a=0,la=3;a<la;a++){
+                layer.rotate(120)
+                layer.beginShape()
+                layer.vertex(0,-5)
+                layer.bezierVertex(-20,25,-20,55,0,85)
+                layer.bezierVertex(20,55,20,25,0,-5)
+                layer.endShape()
+            }
+
+            return layer
+        case 153:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(80)
+            layer.beginShape()
+            layer.vertex(20,0)
+            layer.bezierVertex(60,-50,100,-50,140,0)
+            layer.bezierVertex(120,-20,100,-20,80,0)
+            layer.bezierVertex(60,-20,40,-20,20,40)
+            layer.endShape()
+            layer.beginShape()
+            layer.vertex(-20,0)
+            layer.bezierVertex(-60,-50,-100,-50,-140,0)
+            layer.bezierVertex(-120,-20,-100,-20,-80,0)
+            layer.bezierVertex(-60,-20,-40,-20,-20,40)
+            layer.endShape()
+            layer.scale(0.6)
+            layer.fill(0,0,150)
+            layer.ellipse(0,0,160)
+            layer.fill(255,150,225)
+            for(let a=0,la=5;a<la;a++){
+                layer.beginShape()
+                layer.vertex(0,0)
+                layer.bezierVertex(-21,-30,-28,-40,-7,-70)
+                layer.vertex(0,-56)
+                layer.vertex(7,-70)
+                layer.bezierVertex(28,-40,21,-30,0,0)
+                layer.endShape(CLOSE)
+                layer.rotate(72)
+            }
+
+            return layer
+        case 154:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
