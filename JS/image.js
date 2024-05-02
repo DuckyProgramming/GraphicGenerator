@@ -7404,7 +7404,7 @@ function setupImage(type){
 
             return layer
         case 161:
-            layer=createGraphics(1800,900)
+            layer=createGraphics(600,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
 
@@ -7412,14 +7412,16 @@ function setupImage(type){
             layer.rect(0,0,layer.width,layer.height)
 
             layer.stroke(119,150,222)
+            let dots=[]
             for(let a=0,la=45;a<la;a++){
                 let b=-0.2
                 let c=-0.2
                 while(b<1.2){
-                    d=floor(random(0.8,4))
+                    d=floor(random(0.5,4))
                     c=b+d*0.1/3
                     if(d==0){
                         layer.strokeWeight(10)
+                        dots.push([-1800+a*60+b*900,-460+b*920])
                     }else{
                         layer.strokeWeight(5)
                     }
@@ -7431,14 +7433,24 @@ function setupImage(type){
                 let b=-0.2
                 let c=-0.2
                 while(b<1.2){
-                    d=floor(random(0.8,4))
+                    d=floor(random(1,4))
                     c=b+d*0.1/3
-                    if(d==0){
-                        layer.strokeWeight(10)
-                    }else{
-                        layer.strokeWeight(5)
+                    let works=true
+                    for(let e=0,le=dots.length;e<le;e++){
+                        if(
+                            dist(-900+a*60-b*900,-460+b*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-c*900,-460+c*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-(b+c)/2*900,-460+(b+c)/2*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-(b*3+c)/4*900,-460+(b*3+c)/4*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-(b+c*3)/4*900,-460+(b+c*3)/4*920,dots[e][0],dots[e][1])<20
+                        ){
+                            works=false
+                        }
                     }
-                    layer.line(-900+a*60-c*900,-460+c*920,-900+a*60-b*900,-460+b*920)
+                    layer.strokeWeight(5)
+                    if(works){
+                        layer.line(-900+a*60-c*900,-460+c*920,-900+a*60-b*900,-460+b*920)
+                    }
                     b=c+floor(random(1,3))*0.1/3
                 }
             }
@@ -7446,14 +7458,16 @@ function setupImage(type){
             layer.translate(30,0)
 
             layer.stroke(49,100,192)
+            dots=[]
             for(let a=0,la=45;a<la;a++){
                 let b=-0.2
                 let c=-0.2
                 while(b<1.2){
-                    d=floor(random(0.8,4))
+                    d=floor(random(0.5,4))
                     c=b+d*0.1/3
                     if(d==0){
                         layer.strokeWeight(10)
+                        dots.push([-1800+a*60+b*900,-460+b*920])
                     }else{
                         layer.strokeWeight(5)
                     }
@@ -7465,17 +7479,33 @@ function setupImage(type){
                 let b=-0.2
                 let c=-0.2
                 while(b<1.2){
-                    d=floor(random(0.8,4))
+                    d=floor(random(1,4))
                     c=b+d*0.1/3
-                    if(d==0){
-                        layer.strokeWeight(10)
-                    }else{
-                        layer.strokeWeight(5)
+                    let works=true
+                    for(let e=0,le=dots.length;e<le;e++){
+                        if(
+                            dist(-900+a*60-b*900,-460+b*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-c*900,-460+c*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-(b+c)/2*900,-460+(b+c)/2*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-(b*3+c)/4*900,-460+(b*3+c)/4*920,dots[e][0],dots[e][1])<20|| 
+                            dist(-900+a*60-(b+c*3)/4*900,-460+(b+c*3)/4*920,dots[e][0],dots[e][1])<20
+                        ){
+                            works=false
+                        }
                     }
-                    layer.line(-900+a*60-c*900,-460+c*920,-900+a*60-b*900,-460+b*920)
+                    layer.strokeWeight(5)
+                    if(works){
+                        layer.line(-900+a*60-c*900,-460+c*920,-900+a*60-b*900,-460+b*920)
+                    }
                     b=c+floor(random(1,3))*0.1/3
                 }
             }
+
+            layer.translate(-30,0)
+
+            layer.fill(150,0.6)
+            layer.noStroke()
+            layer.rect(0,0,layer.width,layer.height)
             
 
             return layer
@@ -7548,6 +7578,38 @@ function setupImage(type){
 
             layer.noStroke()
             layer.noErase()
+
+
+
+
+
+
+            layer.fill(48,125,242)
+            layer.rect(0,0,12,3)
+            layer.rect(0,-6,12,3)
+            layer.rect(0,6,12,3)
+            layer.rect(0,-12,22,3)
+            layer.rect(0,12,22,3)
+            layer.rect(-9.5,0,3,26)
+            layer.rect(9.5,0,3,26)
+            layer.fill(18,95,212)
+            layer.rect(0,0,10,1)
+            layer.rect(0,-6,10,1)
+            layer.rect(0,6,10,1)
+            layer.rect(0,-12,20,1)
+            layer.rect(0,12,20,1)
+            layer.rect(-9.5,0,1,25)
+            layer.rect(9.5,0,1,25)
+
+
+            /*layer.fill(48,125,242)
+            layer.rect(0,0,6,27)
+            layer.rect(-8,4.5,6,18)
+            layer.rect(8,6,6,15)
+            layer.fill(18,95,212)
+            layer.rect(0,0,2,23)
+            layer.rect(-8,4.5,2,14)
+            layer.rect(8,6,2,11)*/
 
 
             /*layer.rotate(45)
