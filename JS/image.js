@@ -7915,7 +7915,8 @@ function setupImage(type){
             for(let a=0,la=6;a<la;a++){
                 layer.fill(48-a*6,125-a*6,242-a*6)
                 //layer.text('MoveBuildDB',-3+a/la*6,2+a/la*6)
-                layer.text('MinesweeperDB\nDuckyProgramming\nVersion 1.2.4\nLast Update: 2-22-24',-3+a/la*3,2+a/la*3)
+                //layer.text('MinesweeperDB\nDuckyProgramming\nVersion 1.2.4\nLast Update: 2-22-24',-3+a/la*3,2+a/la*3)
+                layer.text('MinesweeperDB\nDuckyProgramming\nVersion 1.4.2\nLast Update: 5-3-24',-3+a/la*3,2+a/la*3)
             }
             
             return layer
@@ -7943,14 +7944,87 @@ function setupImage(type){
             
             return layer
         case 168:
-            layer=createGraphics(300,300)
+            layer=createGraphics(1500,750)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            for(let a=0,la=100;a<la;a++){
+                layer.fill(0)
+                layer.rect(0,0,1500,750)
+                layer.fill(255)
+                layer.textSize(40)
+                layer.text('me when',0,-335)
+                layer.text('me when',0,335)
+                layer.scale(0.8)
+                layer.rect(0,0,1500,750)
+                layer.fill(0)
+                layer.textSize(40)
+                layer.text('me when',0,-335)
+                layer.text('me when',0,335)
+                layer.scale(0.8)
+            }
+
             return layer
         case 169:
-            layer=createGraphics(300,300)
+            layer=createGraphics(420,240)
             setupLayer(layer)
-            layer.translate(layer.width/2,layer.height/2)
+            layer.background(255)
+
+            /*
+            Hayden Qi
+            AP CSA Junior
+            5575 State Bridge Rd Johns Creek GA 30022
+            Github link
+            picture
+            */
+
+            let gradient=new p5.LinearGradient(-20,125)
+            gradient.colors(
+                0.0,color(255,255,50),
+                0.1,color(255,255,50),
+                0.35,color(50,255,100),
+                0.5,color(0,225,255),
+                0.65,color(50,255,100),
+                0.9,color(255,255,50),
+                1.0,color(255,255,50)
+            )
+            layer.fillGradient(gradient)
+            for(let a=0,la=6;a<la;a++){
+                layer.beginShape()
+                layer.vertex(110+sin(a*60)*65*0.8,120+cos(a*60)*65*0.8)
+                layer.vertex(110+sin(a*60)*74*0.8,120+cos(a*60)*74*0.8)
+                layer.vertex(110+sin(a*60)*74*0.8+cos(a*60)*25,120+cos(a*60)*74*0.8-sin(a*60)*25*0.8)
+                layer.vertex(110+sin(a*60)*86*0.8+cos(a*60)*25,120+cos(a*60)*86*0.8-sin(a*60)*25*0.8)
+                layer.vertex(110+sin(a*60)*86*0.8,120+cos(a*60)*86*0.8)
+                layer.vertex(110+sin(a*60)*95*0.8,120+cos(a*60)*95*0.8)
+                layer.vertex(110+sin(a*60)*80*0.8-cos(a*60)*25,120+cos(a*60)*80*0.8+sin(a*60)*25*0.8)
+                layer.endShape()
+            }
+            layer.beginShape()
+            layer.vertex(103,115)
+            layer.vertex(93,80)
+            layer.vertex(93,155)
+            layer.vertex(75,137)
+            layer.vertex(150,137)
+            layer.vertex(115,127)
+            layer.vertex(140,90)
+            layer.endShape()
+
+            layer.fill(0)
+            layer.textFont('Monospace')
+            layer.textAlign(LEFT,CENTER)
+            layer.textSize(25)
+            layer.text('Hayden Qi',220,60)
+            layer.textSize(15)
+            layer.text('Junior',220,80)
+            layer.textSize(25)
+            layer.text('AP CSA',220,105)
+            layer.textSize(10)
+            layer.text('5575 State Bridge Rd',220,130)
+            layer.text('Johns Creek, GA 30022',220,140)
+            layer.text('github.com/DuckyProgramming',220,160)
+            layer.text('(470) 715-9678',220,175)
+
             return layer
         case 170:
             layer=createGraphics(300,300)
