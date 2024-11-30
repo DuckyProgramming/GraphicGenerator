@@ -8027,6 +8027,133 @@ function setupImage(type){
 
             return layer
         case 170:
+            layer=createGraphics(600,600)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.push()
+            rando=15393
+            for(let a=0,la=1000;a<la;a++){
+                let dir=((a+1)/la*rando+24)
+                layer.rotate(rando/la)
+                let cangle=dir
+                let zangle=24.2
+                let colors=[[100,40,120],[230,230,215],[60,45,110]]
+                layer.fill(...mergeColor(mergeColor(colors[(floor(cangle/zangle)+3)%3],colors[(floor(cangle/zangle)+4)%3],-cos((cangle%zangle)*180/zangle)*0.5+0.5),[20,10,50],constrain(((a/la)**3)*1.25,0,1)))
+                let size=((abs(sin(dir*2.5))**0.8)*0.5+random(0.875,1))*(1-((a/la)**3))
+                layer.quad(0,0,-0.5-size*2.5,-160*size,0,-200*size,0.5+size*2.5,-160*size)
+            }
+            layer.pop()
+
+            above=createGraphics(600,600)
+            setupLayer(above)
+            above.fill(255,0.04)
+            for(let a=0,la=50;a<la;a++){
+                let scale=1.25-a/la*0.5
+                regStar(above,300,300,5,180*scale,180*scale,40*scale,40*scale,24)
+                regStar(above,300,300,5,35*scale,35*scale,120*scale,120*scale,24)
+            }
+            above.erase(0.025)
+            for(let a=0,la=50;a<la;a++){
+                let scale=0.75-a/la*0.75
+                regStar(above,300,300,5,180*scale,180*scale,40*scale,40*scale,24)
+                regStar(above,300,300,5,35*scale,35*scale,120*scale,120*scale,24)
+            }
+
+            layer.image(above,0,0,600,600)
+
+            return layer
+        case 171:
+            layer=createGraphics(600,600)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.translate(-100,100)
+
+            layer.push()
+            rando=15393
+            for(let a=0,la=1000;a<la;a++){
+                let dir=((a+1)/la*rando)
+                layer.rotate(rando/la)
+                let cangle=dir
+                let zangle=24.2
+                let colors=[[100,40,120],[230,230,215],[60,45,110]]
+                layer.fill(...mergeColor(mergeColor(colors[(floor(cangle/zangle)+3)%3],colors[(floor(cangle/zangle)+4)%3],-cos((cangle%zangle)*180/zangle)*0.5+0.5),[20,10,50],constrain(((a/la)**3)*1.25,0,1)))
+                let size=1
+                if(dir%360>=0&&dir%360<10){
+                    size=map(dir%360,0,10,1.5,0.8)
+                }else if(dir%360>=10&&dir%360<20){
+                    size=map(dir%360,10,20,0.8,0.5)
+                }else if(dir%360>=20&&dir%360<30){
+                    size=map(dir%360,20,30,0.5,0.8)
+                }else if(dir%360>=30&&dir%360<45){
+                    size=map(dir%360,30,45,0.8,1.8)
+                }else if(dir%360>=45&&dir%360<60){
+                    size=map(dir%360,45,60,1.8,0.8)
+                }else if(dir%360>=60&&dir%360<70){
+                    size=map(dir%360,60,70,0.8,0.5)
+                }else if(dir%360>=70&&dir%360<80){
+                    size=map(dir%360,70,80,0.5,0.8)
+                }else if(dir%360>=80&&dir%360<90){
+                    size=map(dir%360,80,90,0.8,1.5)
+                }else if(dir%360>=90&&dir%360<100){
+                    size=map(dir%360,90,100,1.5,0)
+                }else if(dir%360>=180&&dir%360<190){
+                    size=map(dir%360,180,190,0,0.45)
+                }else if(dir%360>=190&&dir%360<210){
+                    size=map(dir%360,190,210,0.45,0.4)
+                }else if(dir%360>=210&&dir%360<225){
+                    size=map(dir%360,210,225,0.4,0.39)
+                }else if(dir%360>=225&&dir%360<240){
+                    size=map(dir%360,225,240,0.39,0.4)
+                }else if(dir%360>=225&&dir%360<260){
+                    size=map(dir%360,240,260,0.39,0.45)
+                }else if(dir%360>=260&&dir%360<270){
+                    size=map(dir%360,260,270,0.45,0)
+                }else if(dir%360>=350&&dir%360<360){
+                    size=map(dir%360,350,360,0,1.5)
+                }else{
+                    size=0
+                }
+                size*=(1-((a/la)**3))
+                layer.quad(0,0,-0.5-size*2.5,-160*size,0,-200*size,0.5+size*2.5,-160*size)
+            }
+            layer.pop()
+
+            /*above=createGraphics(600,600)
+            setupLayer(above)
+            above.fill(255,0.04)
+            for(let a=0,la=50;a<la;a++){
+                let scale=1.25-a/la*0.5
+                regStar(above,300,300,5,180*scale,180*scale,40*scale,40*scale,24)
+                regStar(above,300,300,5,35*scale,35*scale,120*scale,120*scale,24)
+            }
+            above.erase(0.025)
+            for(let a=0,la=50;a<la;a++){
+                let scale=0.75-a/la*0.75
+                regStar(above,300,300,5,180*scale,180*scale,40*scale,40*scale,24)
+                regStar(above,300,300,5,35*scale,35*scale,120*scale,120*scale,24)
+            }
+
+            layer.image(above,0,0,600,600)*/
+
+            return layer
+        case 172:
+            layer=createGraphics(1920,1080)
+            setupLayer(layer)
+            
+            return layer
+        case 173:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+            return layer
+        case 174:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+            return layer
+        case 175:
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
