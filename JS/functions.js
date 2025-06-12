@@ -194,6 +194,9 @@ function pentagon(layer,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5){
 	layer.vertex(x5,y5)
 	layer.endShape(CLOSE)
 }
+function sawtooth(value){
+	return 2*abs(value/2-floor(value/2+0.5))
+}
 function setupBase(){
     colorMode(RGB,255,255,255,1)
     angleMode(DEGREES)

@@ -8027,9 +8027,24 @@ function setupImage(type){
 
             return layer
         case 170:
-            layer=createGraphics(600,600)
+            layer=createGraphics(720,720)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.strokeWeight(2)
+            for(let a=0,la=layer.width+layer.height;a<la;a++){
+                layer.stroke(...mergeColor([20,18,40],[118,118,170],a/la))
+                layer.line(layer.width/2-a,-layer.height/2,layer.width/2,-layer.height/2+a)
+            }
+
+            layer.erase()
+            layer.stroke(0)
+            layer.noFill()
+            layer.strokeWeight(layer.width/2)
+            layer.ellipse(0,0,layer.width*3/2)
+            layer.noErase()
+
+            layer.noStroke()
 
             layer.push()
             rando=15393
@@ -8139,24 +8154,215 @@ function setupImage(type){
 
             return layer
         case 172:
-            layer=createGraphics(1920,1080)
+            layer=createGraphics(600,360)
             setupLayer(layer)
+
+            layer.background(255)
+            for(let a=0,la=100;a<la;a++){
+                layer.stroke(random(50,150))
+                layer.strokeWeight(random(2,3))
+                let direction=floor(random(0,4))+floor(random(0,1.6))*4
+                let length=random(0,50)
+                let position
+                switch(direction){
+                    case 0:
+                        position=random(0,layer.width)
+                        layer.line(position,0,position+length,length)
+                    break
+                    case 1:
+                        position=random(0,layer.width)
+                        layer.line(position,0,position-length,length)
+                    break
+                    case 2:
+                        position=random(0,layer.width)
+                        layer.line(position,layer.height,position+length,layer.height-length)
+                    break
+                    case 3:
+                        position=random(0,layer.width)
+                        layer.line(position,layer.height,position-length,layer.height-length)
+                    break
+                    case 4:
+                        position=random(0,layer.height)
+                        layer.line(0,position,length,position+length)
+                    break
+                    case 5:
+                        position=random(0,layer.height)
+                        layer.line(0,position,length,position-length)
+                    break
+                    case 6:
+                        position=random(0,layer.height)
+                        layer.line(layer.width,position,layer.width-length,position+length)
+                    break
+                    case 7:
+                        position=random(0,layer.height)
+                        layer.line(layer.width,position,layer.width-length,position-length)
+                    break
+                }
+            }
             
             return layer
         case 173:
-            layer=createGraphics(300,300)
+            layer=createGraphics(200,200)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(255,0.1)
+            layer.ellipse(0,0,200)
+            layer.fill(100,50,200,0.4)
+            layer.ellipse(0,0,200)
+            layer.noFill()
+            for(let a=0,la=50;a<la;a++){
+				let b=random(-4,4)
+				layer.stroke(255,255,255,random(0.025,0.1))
+				layer.strokeWeight(random(2,3))
+				layer.ellipse(0,0,10*a+b)
+				layer.strokeWeight(random(0.5,1))
+				layer.ellipse(0,0,10*a+b)
+			}
+			layer.fill(255,0.02)
+			for(let a=0,la=6;a<la;a++){
+				for(let b=0,lb=10;b<lb;b++){
+					layer.arc(0,0,600,600,-90+a*60-8*(1-b/lb),-90+a*60+8*(1-b/lb))
+				}
+			}
+            layer.stroke(0)
+            layer.strokeWeight(100)
+            layer.erase()
+            layer.noFill()
+            layer.ellipse(0,0,layer.width+100,layer.height+100)
+
             return layer
         case 174:
-            layer=createGraphics(300,300)
+            layer=createGraphics(400,400)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(255)
+            layer.ellipse(0,0,400,400)
+            layer.fill(0,0,50)
+            layer.beginShape()
+            layer.vertex(-200,0)
+            layer.bezierVertex(-80,0,-80,-80,40,-80)
+            layer.bezierVertex(140,-80,140,0,200,0)
+            layer.bezierVertex(140,0,140,80,40,80)
+            layer.bezierVertex(-80,80,-80,0,-200,0)
+            layer.endShape()
+            layer.fill(255)
+            layer.ellipse(60,0,155.5)
+
             return layer
         case 175:
-            layer=createGraphics(300,300)
+            layer=createGraphics(600,600)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
+
+            for(let a=0,la=100;a<la;a++){
+                layer.fill(11*1.5*(1-a/la),17*1.5*(1-a/la),32*1.5*(1-a/la))
+                layer.ellipse(0,0,layer.width*(1-a/la),layer.height*(1-a/la))
+            }
+
+            overlayer=createGraphics(600,600)
+            setupLayer(overlayer)
+            overlayer.translate(overlayer.width/2,overlayer.height/2)
+
+            overlayer.fill(253,251,247)
+            overlayer.rect(0,0,600)
+            overlayer.erase()
+            overlayer.ellipse(0,0,580)
+            overlayer.noErase()
+            overlayer.fill(253*0.9,251*0.9,247*0.9)
+            for(let a=0,la=30;a<la;a++){
+                overlayer.rotate(360/la)
+                overlayer.ellipse(0,290,63,48)
+            }
+            overlayer.fill(253,251,247)
+            for(let a=0,la=30;a<la;a++){
+                overlayer.rotate(360/la)
+                overlayer.ellipse(0,295,57,48)
+            }
+
+            layer.stroke(84,147,210)
+            layer.strokeWeight(3)
+            for(let a=0,la=80;a<la;a++){
+                layer.line(0,-300,0,-264+a%8*12)
+                layer.rotate(360/la)
+            }
+            layer.noFill()
+            layer.stroke(49,100,192)
+            layer.strokeWeight(4)
+            for(let a=0,la=40;a<la;a++){
+                layer.rotate(-90/la)
+                layer.line(0,-300,0,-255+a%5*15)
+                layer.arc(0,0,510-a%5*30,510-a%5*30,-90,-60-a%5*5)
+                layer.rotate(450/la)
+            }
+
+            layer.noStroke()
+            layer.fill(88*0.8,91*0.8,129*0.8)
+            for(let a=0,la=30;a<la;a++){
+                layer.rotate(180/la)
+                layer.ellipse(0,285,63,48)
+                layer.rotate(180/la)
+            }
+            layer.fill(88,91,129)
+            for(let a=0,la=30;a<la;a++){
+                layer.rotate(180/la)
+                layer.ellipse(0,290,57,48)
+                layer.rotate(180/la)
+            }
+
+            layer.image(overlayer,0,0)
+
+            layer.strokeWeight(18)
+            let points=[
+                [-60,-100],
+                [-60,100],
+                [-100,60],
+                [100,60],
+                [10,25],
+                [95,-95],
+                [-25,-10],
+                [-60,-100]
+            ]
+            for(let a=0,la=points.length;a<la;a++){
+                points[a][0]*=1.2
+                points[a][1]*=1.2
+            }
+            let length=0
+            for(let a=0,la=points.length-1;a<la;a++){
+                length+=dist(points[a][0],points[a][1],points[a+1][0],points[a+1][1])
+            }
+            let pos=[points[0][0],points[0][1]]
+            let overLoc=0
+            let loc=0
+            let seg=0
+            while(seg<points.length-1){
+                let extent=dist(points[seg][0],points[seg][1],points[seg+1][0],points[seg+1][1])
+                let prev=[pos[0],pos[1]]
+                overLoc++
+                loc++
+                if(loc>=extent){
+                    loc-=extent
+                    overLoc-=loc
+                    loc=0
+                    seg++
+                    pos[0]=points[seg][0]
+                    pos[1]=points[seg][1]
+                }else{
+                    pos[0]=map(loc/extent,0,1,points[seg][0],points[seg+1][0])
+                    pos[1]=map(loc/extent,0,1,points[seg][1],points[seg+1][1])
+                }
+                let merged=mergeColor([48,125,242],[216,242,255],sawtooth(overLoc/length*8))
+                layer.stroke(...merged)
+                layer.line(prev[0],prev[1],pos[0],pos[1])
+            }
+
+            layer.erase()
+            layer.stroke(0)
+            layer.noFill()
+            layer.strokeWeight(200)
+            layer.ellipse(0,0,layer.width+200,layer.height+200)
+
             return layer
     }
     return 0
