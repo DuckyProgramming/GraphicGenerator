@@ -824,7 +824,7 @@ function setupImage(type){
             }*/
             //shotgun code
 
-            key=3
+            key=119
             key=(key>>>0).toString(6)
             //key='z'
 
@@ -1319,9 +1319,16 @@ function setupImage(type){
             layer.fill(240)
             layer.ellipse(0,0,180)
 
-            /*layer.stroke(80,120,160)
+            layer.stroke(80,120,160)
             layer.strokeWeight(10)
-            layer.line(25,-40,25,40)
+            layer.line(35,-40,35,40)
+            layer.line(15,-40,15,40)
+            layer.line(-40,-40,-20,40)
+            layer.line(0,-40,-20,40)
+            /*layer.line(25,-40,25,40)
+            layer.line(-30,-40,-10,40)
+            layer.line(10,-40,-10,40)*/
+            /*layer.line(25,-40,25,40)
             layer.line(-30,-40,10,40)
             layer.line(10,-40,-30,40)*/
 
@@ -1374,7 +1381,7 @@ function setupImage(type){
             layer.arc(0,0,120,120,-150,30)*/
             //cavalry division
 
-            layer.fill(100)
+            /*layer.fill(100)
             layer.arc(0,0,140,140,0,180)
             layer.fill(120)
             layer.arc(0,0,124,124,100,280)
@@ -1385,7 +1392,7 @@ function setupImage(type){
             layer.fill(180)
             layer.arc(0,0,64,64,400,580)
             layer.fill(200)
-            layer.arc(0,0,40,40,500,680)
+            layer.arc(0,0,40,40,500,680)*/
             //tank division
 
             layer.stroke(80,120,160)
@@ -1406,12 +1413,29 @@ function setupImage(type){
             layer.line(55,-40,15,40)
             layer.line(15,-40,55,40)*/
 
-            /*layer.line(-40,-40,-20,40)
-            layer.line(0,-40,-20,40)
-            layer.line(20,-40,20,40)
-            layer.line(40,-40,40,40)*/
+            /*layer.line(35,-40,35,40)
+            layer.line(15,-40,15,40)
+            layer.line(-40,-40,-20,40)
+            layer.line(0,-40,-20,40)*/
 
-            layer.line(0,-40,0,40)
+            /*layer.line(-25,-40,-25,40)
+            layer.line(30,-40,10,40)
+            layer.line(-10,-40,10,40)*/
+
+            //layer.line(0,-40,0,40)
+
+            /*layer.line(45,-40,45,40)
+            layer.line(25,-40,25,40)
+            layer.line(5,-40,5,40)
+            layer.line(-50,-40,-30,40)
+            layer.line(-10,-40,-30,40)*/
+
+            //layer.line(-20,-40,0,40)
+            //layer.line(20,-40,0,40)
+
+            layer.line(25,-40,25,40)
+            layer.line(-30,-40,10,40)
+            layer.line(10,-40,-30,40)
             
             return layer
         case 29:
@@ -1598,7 +1622,7 @@ function setupImage(type){
             layer.translate(layer.width/2,layer.height/2)
 
             layer.fill(0,100,200)
-            layer.quad(-10,-10,130,-130,10,10,-130,130)
+            //layer.quad(-10,-10,130,-130,10,10,-130,130)
             //elite
 
             layer.fill(0,0,200)
@@ -1631,14 +1655,17 @@ function setupImage(type){
             layer.vertex(140,80)
             layer.endShape()
 
-            layer.fill(0,100,200)
-            layer.quad(-5,5,130,130,5,-5,-130,-130)
+            //layer.fill(0,100,200)
+            //layer.quad(-5,5,130,130,5,-5,-130,-130)
             //elite
 
             layer.fill(255,100,255)
             for(let a=0,la=1;a<la;a++){
-                layer.ellipse(-la*10+10+a*20,-la*10+10+a*20,20)
+                layer.ellipse(-la*10+10+a*20+(a>0?3.5:0),-la*10+10+a*20+(a>0?3.5:0),20+(a==0?10:0))
             }
+            /*for(let a=0,la=1;a<la;a++){
+                layer.ellipse(-la*10+10+a*20,-la*10+10+a*20,20+(a==0?10:0))
+            }*/
 
             return layer
         case 35:
@@ -1670,7 +1697,7 @@ function setupImage(type){
 
             layer.rotate(-45)
             layer.fill(255,100,255)
-            for(let a=0,la=4;a<la;a++){
+            for(let a=0,la=5;a<la;a++){
                 layer.ellipse(-la*10+10+a*20,-la*10+10+a*20,20)
             }
 
@@ -8498,6 +8525,61 @@ function setupImage(type){
                 layer.strokeWeight(200)
                 layer.ellipse(0,0,800)
             }
+
+            return layer
+        case 177:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(255,255,50)
+            layer.rotate(45)
+            layer.rect(0,0,180,180)
+            layer.erase()
+            layer.ellipse(-80,0,50)
+            layer.ellipse(80,0,50)
+            layer.ellipse(0,-80,50)
+            layer.ellipse(0,80,50)
+
+            return layer
+        case 178:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+            layer.fill(200,0,40)
+            layer.scale(2)
+            layer.rotate(180)
+            layer.beginShape()
+            layer.vertex(72.5,0)
+            layer.vertex(72.5/2,72.5/2*sqrt(3))
+            layer.vertex(-72.5/2,72.5/2*sqrt(3))
+            layer.vertex(-72.5*0.75,72.5/4*sqrt(3))
+            layer.vertex(72.5*0.75,-72.5/4*sqrt(3))
+            layer.endShape()
+            layer.rotate(-180)
+            layer.scale(0.5)
+            layer.fill(250,200,20)
+            regPoly(layer,0,0,6,125,125,30)
+            layer.fill(0,40,120)
+            regPoly(layer,0,0,6,105,105,30)
+            layer.fill(240)
+            regPoly(layer,0,0,6,85,85,30)
+
+            layer.stroke(80,120,160)
+            layer.strokeWeight(10)
+            layer.line(-40,-10,40,-10)
+            layer.line(-40,10,40,10)
+
+            layer.scale(2)
+            layer.noStroke()
+            layer.fill(80)
+            layer.beginShape()
+            layer.vertex(72.5,0)
+            layer.vertex(72.5/2,72.5/2*sqrt(3))
+            layer.vertex(-72.5/2,72.5/2*sqrt(3))
+            layer.vertex(-72.5*0.75,72.5/4*sqrt(3))
+            layer.vertex(72.5*0.75,-72.5/4*sqrt(3))
+            layer.endShape()
 
             return layer
     }
