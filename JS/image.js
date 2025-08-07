@@ -1705,7 +1705,7 @@ function setupImage(type){
         case 36:
             layer=createGraphics(300,300)
             setupLayer(layer)
-            layer.translate(layer.width/2,layer.height/2)
+            layer.translate(layer.width/2,slayer.height/2)
 
             let sizescale=3
             //0-army group
@@ -8580,6 +8580,26 @@ function setupImage(type){
             layer.vertex(-72.5*0.75,72.5/4*sqrt(3))
             layer.vertex(72.5*0.75,-72.5/4*sqrt(3))
             layer.endShape()
+
+            return layer
+        case 179:
+            layer=createGraphics(48,30)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(2)
+            layer.line(-24,-15,24,15)
+            layer.line(-24,15,24,-15)
+            layer.noFill()
+            layer.strokeWeight(3)
+            layer.rect(0,0,46,28)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(12.5)
+            layer.strokeWeight(1)
+            layer.text('XXXX',0,1)
+            layer.pop()
 
             return layer
     }
