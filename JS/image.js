@@ -8602,6 +8602,64 @@ function setupImage(type){
             layer.pop()
 
             return layer
+        case 180:
+            layer=createGraphics(160,100)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noStroke()
+            layer.fill(190,40,40)
+            layer.rect(0,0,160,100)
+            for(let a=0,la=8;a<la;a++){
+                for(let b=0,lb=8;b<lb;b++){
+                    layer.fill((a+b)%2*255)
+                    layer.rect(-28+a*8,-28+b*8,8)
+                }
+            }
+
+            return layer
+        case 181:
+            layer=createGraphics(160,100)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noStroke()
+            layer.fill(20,160,100)
+            layer.rect(-40,0,80,100)
+            layer.fill(250,140,60)
+            layer.rect(40,0,80,100)
+            layer.stroke(250)
+            layer.strokeWeight(20)
+            layer.line(-84,-50,84,50)
+            layer.line(-84,50,84,-50)
+
+            return layer
+        case 182:
+            layer=createGraphics(160,100)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noStroke()
+            layer.fill(255,205,48)
+            layer.rect(0,0,160,100)
+            layer.fill(225,0,0)
+            layer.rect(0,0,50)
+
+            return layer
+        case 183:
+            layer=createGraphics(160,100)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noStroke()
+            layer.fill(9,45,154)
+            layer.rect(0,0,160,100)
+            layer.fill(255)
+            layer.ellipse(0,0,64)
+            layer.fill(9,45,154)
+            layer.ellipse(12,-2,56)
+
+            return layer
     }
     return 0
 }
