@@ -8660,6 +8660,196 @@ function setupImage(type){
             layer.ellipse(12,-2,56)
 
             return layer
+        case 184:
+            layer=createGraphics(160,100)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noStroke()
+            layer.fill(7,137,48)
+            layer.rect(-40,0,80,100)
+            layer.fill(252,221,9)
+            layer.rect(40,0,80,100)
+            for(let a=0,la=8;a<la;a++){
+                for(let b=0,lb=8;b<lb;b++){
+                    layer.fill((a+b)%2*255)
+                    layer.rect(-28+a*8,-28+b*8,8)
+                }
+            }
+
+            return layer
+        case 185:
+            layer=createGraphics(72,45)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-36,-22,36,22)
+            layer.line(-36,22,36,-22)
+            layer.noFill()
+            layer.strokeWeight(4)
+            layer.rect(0,0,69,42)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text('XXXX',0,1)
+            layer.pop()
+
+            return layer
+        case 186:
+            layer=createGraphics(42,27)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noFill()
+            layer.stroke(40)
+            layer.strokeWeight(2.4)
+            layer.rect(0,0,40.2,25.2)
+            layer.strokeWeight(1.8)
+            layer.rect(0,0,34.2,19.2)
+            layer.pop()
+
+            return layer
+        case 187:
+            layer=createGraphics(72,45)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-36,-22,36,22)
+            layer.line(-36,22,36,-22)
+            layer.noFill()
+            layer.strokeWeight(20)
+            layer.ellipse(0,0,85,58)
+            layer.stroke(0)
+            layer.strokeWeight(20)
+            layer.ellipse(0,0,92,65)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text('XXXX',0,1)
+            layer.pop()
+
+            return layer
+        case 188:
+            layer=createGraphics(84,54)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.noFill()
+            layer.stroke(40)
+            layer.strokeWeight(4)
+            layer.rect(0,0,81,51)
+            layer.pop()
+
+            return layer
+        case 189:
+            layer=createGraphics(66,41.25)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-33,-20.125,33,20.125)
+            layer.line(-33,20.125,33,-20.125)
+            layer.noFill()
+            layer.strokeWeight(4)
+            layer.rect(0,0,63,38.25)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text('XXX',0,1)
+            layer.pop()
+
+            return layer
+        case 190:
+            layer=createGraphics(60,37.5)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-30,-18.25,30,18.25)
+            layer.line(-30,18.25,30,-18.25)
+            layer.noFill()
+            layer.strokeWeight(4)
+            layer.rect(0,0,57,34.5)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text('XX',0,1)
+            layer.pop()
+
+            return layer
+        case 191:
+            layer=createGraphics(54,33.75)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-27,-16.375,27,16.375)
+            layer.line(-27,16.375,27,-16.375)
+            layer.noFill()
+            layer.strokeWeight(4)
+            layer.rect(0,0,51,30.75)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text('X',0,1)
+            layer.pop()
+
+            return layer
+        case 192: case 193: case 194: case 195:
+            let count=type-192
+            let scalar=0.875+count*0.125
+            layer=createGraphics(72*scalar,45*scalar)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-36*scalar,-(22.5*scalar-0.5),36*scalar,(22.5*scalar-0.5))
+            layer.line(-36*scalar,(22.5*scalar-0.5),36*scalar,-(22.5*scalar-0.5))
+            layer.noFill()
+            layer.strokeWeight(4)
+            layer.rect(0,0,72*scalar-3,45*scalar-3)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text([`X`,`XX`,`XXX`,`XXXX`][count],0,1)
+            layer.pop()
+
+            return layer
+        case 196:
+            layer=createGraphics(300,200)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+            for(let a=0,la=dist(0,0,layer.width,layer.height);a<la;a++){
+                let b=-0.5+a/la*1.5
+                layer.fill(40+b*45,83+b*44,214+b*34)
+                layer.ellipse(0,0,la-a)
+            }
+            layer.image(graphics.i2,0,0,graphics.i2.width*0.2,graphics.i2.height*0.2)
+            for(let a=0,la=10;a<la;a++){
+                layer.image(graphics.i1,100*sin((a+0.5)/la*360),75*cos((a+0.5)/la*360)-2,graphics.i1.width*0.075,graphics.i1.height*0.075)
+            }
+
+            return layer
+        case 197:
+            layer=createGraphics(72,45)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            return layer
     }
     return 0
-}
+} 
