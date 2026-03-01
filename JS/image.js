@@ -1433,9 +1433,14 @@ function setupImage(type){
             //layer.line(-20,-40,0,40)
             //layer.line(20,-40,0,40)
 
-            layer.line(25,-40,25,40)
-            layer.line(-30,-40,10,40)
-            layer.line(10,-40,-30,40)
+            //layer.line(25,-40,25,40)
+            //layer.line(-30,-40,10,40)
+            //layer.line(10,-40,-30,40)
+
+            layer.line(10,-40,30,40)
+            layer.line(50,-40,30,40)
+            layer.line(-45,-40,-5,40)
+            layer.line(-5,-40,-45,40)
             
             return layer
         case 29:
@@ -8845,6 +8850,48 @@ function setupImage(type){
 
             return layer
         case 197:
+            layer=createGraphics(300,300)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(200,150,50)
+            layer.ellipse(0,0,210)
+            for(let a=0,la=8;a<la;a++){
+                layer.rotate(45)
+                layer.triangle(-20,-102,20,-102,0,-142)
+            }
+            layer.fill(225,175,50)
+            layer.ellipse(0,0,200)
+            for(let a=0,la=8;a<la;a++){
+                layer.rotate(45)
+                layer.triangle(-15,-97,15,-97,0,-132)
+            }
+            layer.fill(200,150,50)
+            layer.ellipse(0,0,180)
+            layer.erase()
+            layer.ellipse(0,0,170)
+            layer.noErase()
+
+            layer2=createGraphics(300,300)
+            setupLayer(layer2)
+            layer2.translate(layer.width/2,layer.height/2)
+            layer2.scale(1.5)
+            layer2.rotate(30)
+            layer2.fill(125,175,50)
+            layer2.ellipse(0,0,90,160)
+            layer2.fill(150,200,50)
+            layer2.ellipse(0,0,80,150)
+            layer2.erase()
+            layer2.triangle(0,-60,-5,80,5,80)
+            for(let a=0,la=4;a<la;a++){
+                layer2.triangle(0,50-a*25,0,40-a*23,-36+a*8,15-a*20)
+                layer2.triangle(0,50-a*25,0,40-a*23,36-a*8,15-a*20)
+            }
+
+            layer.image(layer2,0,0)
+
+            return layer
+        case 198:
             layer=createGraphics(72,45)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)

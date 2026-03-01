@@ -1,11 +1,11 @@
 function preload(){
-    if(display.type==91){
+    /*if(display.type==91){
         graphics.i1=loadImage('../Assets/SSTemplate.png')
     }
     if(display.type==196){
         graphics.i1=loadImage('../Assets/turriers.png')
         graphics.i2=loadImage('../Assets/valensole.png')
-    }
+    }*/
 }
 function setup(){
     setupBase()
