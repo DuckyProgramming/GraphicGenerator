@@ -8844,8 +8844,13 @@ function setupImage(type){
                 layer.ellipse(0,0,la-a)
             }
             layer.image(graphics.i2,0,0,graphics.i2.width*0.2,graphics.i2.height*0.2)
-            for(let a=0,la=10;a<la;a++){
+            /*for(let a=0,la=10;a<la;a++){
                 layer.image(graphics.i1,100*sin((a+0.5)/la*360),75*cos((a+0.5)/la*360)-2,graphics.i1.width*0.075,graphics.i1.height*0.075)
+            }*/
+            for(let a=0,la=4;a<la;a++){
+                layer.image(graphics.i1,100*(a%2*2-1),25*(floor(a/2)*2-1)-1,graphics.i1.width*0.075,graphics.i1.height*0.075)
+                layer.image(graphics.i1,65*(a%2*2-1),60*(floor(a/2)*2-1)-1,graphics.i1.width*0.075,graphics.i1.height*0.075)
+                layer.image(graphics.i1,25*(a%2*2-1),75*(floor(a/2)*2-1)-1,graphics.i1.width*0.075,graphics.i1.height*0.075)
             }
 
             return layer
@@ -8892,6 +8897,23 @@ function setupImage(type){
 
             return layer
         case 198:
+            layer=createGraphics(300,200)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+            for(let a=0,la=dist(0,0,layer.width,layer.height);a<la;a++){
+                let b=-0.5+a/la*1.5
+                layer.fill(40+b*45,83+b*44,214+b*34)
+                layer.ellipse(0,0,la-a)
+            }
+            layer.image(graphics.i2,-86,0,graphics.i2.width*0.2,graphics.i2.height*0.2)
+            for(let a=0,la=5;a<la;a++){
+                for(let b=0,lb=3-a%2;b<lb;b++){
+                    layer.image(graphics.i1,a*33-12,b*60-lb*30+30,graphics.i1.width*0.075,graphics.i1.height*0.075)
+                }
+            }
+
+            return layer
+        case 199:
             layer=createGraphics(72,45)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
