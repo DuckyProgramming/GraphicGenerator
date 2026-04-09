@@ -8831,7 +8831,6 @@ function setupImage(type){
             layer.textSize(18)
             layer.strokeWeight(1.5)
             layer.text([`X`,`XX`,`XXX`,`XXXX`][count],0,1)
-            layer.pop()
 
             return layer
         case 196:
@@ -8913,7 +8912,32 @@ function setupImage(type){
             }
 
             return layer
-        case 199:
+        case 199: case 200: case 201: case 202:
+            let scalar199=0.875+(type-199)*0.125
+            layer=createGraphics(72*scalar199,45*scalar199)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            layer.fill(200)
+            layer.triangle(
+                -36*scalar199,(22.5*scalar199-0.5),
+                36*scalar199,-(22.5*scalar199-0.5),
+                36*scalar199,(22.5*scalar199-0.5)
+            )
+            layer.stroke(40)
+            layer.strokeWeight(3)
+            layer.line(-36*scalar199,(22.5*scalar199-0.5),36*scalar199,-(22.5*scalar199-0.5))
+            layer.noFill()
+            layer.strokeWeight(4)
+            layer.rect(0,0,72*scalar199-3,45*scalar199-3)
+            layer.fill(0)
+            layer.stroke(255)
+            layer.textSize(18)
+            layer.strokeWeight(1.5)
+            layer.text([`X`,`XX`,`XXX`,`XXXX`][type-199],0,1)
+
+            return layer
+        case 203:
             layer=createGraphics(72,45)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)

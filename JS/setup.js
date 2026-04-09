@@ -13,7 +13,6 @@ function setup(){
     display.type.forEach(type=>graphics.main.push(setupImage(type)))
     createCanvas(graphics.main.reduce((acc,item)=>acc+item.width,0),graphics.main.reduce((acc,item)=>max(acc,item.height),0))
     if(graphics.main.length>0){
-        fill(150)
         rect(width/2,height/2,width,height)
         let tick=0
         for(let a=0,la=graphics.main.length;a<la;a++){
