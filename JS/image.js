@@ -1,4 +1,7 @@
 function setupImage(type){
+    let gradient
+    let lsin=(a)=>sin(a)
+    let lcos=(a)=>cos(a)
     switch(type){
         case 1:
             layer=createGraphics(500,500)
@@ -8010,7 +8013,7 @@ function setupImage(type){
             picture
             */
 
-            let gradient=new p5.LinearGradient(-20,125)
+            gradient=new p5.LinearGradient(-20,125)
             gradient.colors(
                 0.0,color(255,255,50),
                 0.1,color(255,255,50),
@@ -8938,6 +8941,272 @@ function setupImage(type){
 
             return layer
         case 203:
+            layer=createGraphics(720,720)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+
+            let colorWing=[[103,100,181],[246,240,237]]
+
+            layer.translate(160,100)
+            layer.scale(5)
+            layer.rotate(10)
+
+            layer.stroke(...colorWing[1])
+			layer.strokeWeight(0.5)
+			let nodes=[
+				[0,0],
+				[-20,-5],
+				[-35,-15],
+				[-40,-30]
+			]
+			let lengths=[]
+			let totalLength=0
+			for(let a=0,la=nodes.length-1;a<la;a++){
+				layer.line(nodes[a][0],nodes[a][1],nodes[a+1][0],nodes[a+1][1])
+				lengths.push(dist(nodes[a][0],nodes[a][1],nodes[a+1][0],nodes[a+1][1]))
+				totalLength+=dist(nodes[a][0],nodes[a][1],nodes[a+1][0],nodes[a+1][1])
+			}
+			layer.strokeWeight(0.6)
+			layer.noStroke()
+			for(let a=0,la=600;a<la;a++){
+				let part=0
+				let prePosition=a*2%totalLength
+				let position=prePosition
+				while(position>lengths[part]){
+					position-=lengths[part]
+					part++
+				}
+				let dir=map(
+					position/lengths[part]*(part==lengths.length-1?1.8:1),0,1,
+					part==0?-75:atan2(nodes[part][0]-nodes[part-1][0],nodes[part][1]-nodes[part-1][1]),
+					atan2(nodes[part+1][0]-nodes[part][0],nodes[part+1][1]-nodes[part][1])
+				)
+				let size=random(0.4,0.6)+sin(a*5)*0.1+(prePosition/totalLength)**2.5*2
+				let offset=random(4,6)-a/la*4
+				layer.push()
+				layer.translate(
+					map(position,0,lengths[part],nodes[part][0],nodes[part+1][0])-(nodes[part+1][1]-nodes[part][1])*0.05*sin(position/lengths[part]*180),
+					map(position,0,lengths[part],nodes[part][1],nodes[part+1][1])+(nodes[part+1][0]-nodes[part][0])*0.05*sin(position/lengths[part]*180)
+				)
+				layer.rotate(-dir-90)
+                let col=mergeColor(colorWing[0],colorWing[1],random(0,0.2)+a/la*0.8)
+                for(let b=0,lb=10;b<lb;b++){
+                    let trueSize=size+b/lb*0.25
+                    layer.fill(...col,(1-b/lb)*0.5)
+                    layer.beginShape()
+                    layer.vertex(-0.2,-0.25+offset*0.1)
+                    layer.bezierVertex(
+                        -1.2*(0.5+trueSize*0.5),(4+offset)*trueSize,
+                        -0.6*(0.5+trueSize*0.5),(5+offset)*trueSize,
+                        0,(6+offset)*trueSize,
+                    )
+                    layer.bezierVertex(
+                        0.6*(0.5+trueSize*0.5),(5+offset)*trueSize,
+                        1.2*(0.5+trueSize*0.5),(4+offset)*trueSize,
+                        0.2,-0.25+offset*0.1
+                    )
+                    layer.endShape()
+                }
+                gradient=new p5.LinearGradient(0,2)
+                gradient.colors(
+                    0.0,
+                    color(...col),
+                    1.0,
+                    color(col[0]-100,col[1]-100,col[2]-40)
+                )
+                layer.fillGradient(gradient)
+                layer.beginShape()
+                layer.vertex(-0.2,-0.25+offset*0.1)
+                layer.bezierVertex(
+                    -1.2*(0.5+size*0.5),(4+offset)*size,
+                    -0.6*(0.5+size*0.5),(5+offset)*size,
+                    0,(6+offset)*size,
+                )
+                layer.bezierVertex(
+                    0.6*(0.5+size*0.5),(5+offset)*size,
+                    1.2*(0.5+size*0.5),(4+offset)*size,
+                    0.2,-0.25+offset*0.1
+                )
+                layer.endShape()
+				layer.pop()
+			}
+            let ticker=0
+			for(let a=0,la=nodes.length-1;a<la;a++){
+				for(let b=0,lb=round(lengths[a]*2);b<lb;b++){
+                    let col=mergeColor(colorWing[0],colorWing[1],random(0.5,0.6)+0.2*(1+sin(ticker*15)))
+					let rand=random(0.2,0.8)
+                    let size=random(0.8,1.2)
+                    let position=(b+rand)/lb
+                    let pos=[
+                        map(position,0,1,nodes[a][0],nodes[a+1][0])-(nodes[a+1][1]-nodes[a][1])*0.05*sin(position*180)+random(-0.25,0.25),
+						map(position,0,1,nodes[a][1],nodes[a+1][1])+(nodes[a+1][0]-nodes[a][0])*0.05*sin(position*180)+random(-0.25,0.25)
+                    ]
+                    for(let c=0,lc=10;c<lc;c++){
+                        layer.stroke(...col,(1-c/lc)*0.5)
+                        layer.strokeWeight(size*(0.25+c/lc))
+                        layer.point(pos[0],pos[1])
+                    }
+				}
+                ticker++
+			}
+
+            return layer
+        case 204:
+            layer=createGraphics(240,160)
+            setupLayer(layer)
+            //layer.translate(layer.width/2,layer.height/2)
+
+            gradient=[new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80)]
+            gradient[0].colors(
+                0.00,color(255,247,189),
+                1.00,color(255,207,87)
+            )
+            gradient[1].colors(
+                0.00,color(255,207,87),
+                1.00,color(255,247,189)
+            )
+            gradient[2].colors(
+                0.00,color(255,239,123),
+                1.00,color(235,159,0)
+            )
+            gradient[3].colors(
+                0.00,color(235,159,0),
+                1.00,color(255,239,123)
+            )
+
+            layer.translate(20,40)
+            layer.fillGradient(gradient[2])
+            layer.ellipse(50,40,103,103)
+            layer.fillGradient(gradient[3])
+            layer.ellipse(150,40,103,103)
+
+            layer.fillGradient(gradient[0])
+            layer.ellipse(50,40,100,100)
+            layer.fillGradient(gradient[2])
+            layer.ellipse(35,40,77,77)
+            layer.erase()
+            layer.ellipse(35,40,74,74)
+            layer.rect(0,40,20,25)
+            layer.noErase()
+            layer.fillGradient(gradient[1])
+            layer.ellipse(150,40,100,100)
+            layer.fillGradient(gradient[3])
+            layer.ellipse(165,40,77,77)
+            layer.erase()
+            layer.ellipse(165,40,74,74)
+            layer.rect(200,40,20,25)
+
+            return layer
+        case 205:
+            layer=createGraphics(200,160)
+            setupLayer(layer)
+            //layer.translate(layer.width/2,layer.height/2)
+
+            gradient=[new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80)]
+            gradient[0].colors(
+                0.00,color(255,247,189),
+                1.00,color(255,207,87)
+            )
+            gradient[1].colors(
+                0.00,color(255,207,87),
+                1.00,color(255,247,189)
+            )
+            gradient[2].colors(
+                0.00,color(255,239,123),
+                1.00,color(235,159,0)
+            )
+            gradient[3].colors(
+                0.00,color(235,159,0),
+                1.00,color(255,239,123)
+            )
+
+            layer.translate(0,40)
+            /*layer.background(0)
+            layer.fill(255)
+            layer.ellipse(50,40,100)
+            layer.ellipse(150,40,100)*/
+            layer.stroke(0)
+            layer.noFill()
+            //for(let a=0,la=24;a<la;a++){
+            for(let a=0,la=18;a<la;a++){
+                let R=5
+                let z=1.25
+                let dir=(a+0.1)/la*360
+                let width=-z*lsin(dir)+sqrt((z*lsin(dir))**2-z**2+R**2)-3.9
+                let end=(33+width*4)
+                if(width>0){
+                    dir-=30
+                    layer.strokeGradient(gradient[2])
+                    layer.strokeWeight(10.5)
+                    layer.arc(160+lsin(dir)*end,40-lcos(dir)*end,40,40,dir-width*15,dir+width*15)
+                    layer.strokeGradient(gradient[0])
+                    layer.strokeWeight(7.5)
+                    layer.arc(160+lsin(dir)*end,40-lcos(dir)*end,40,40,dir-width*15,dir+width*15)
+                }
+                if(width>0){
+                    layer.strokeGradient(gradient[3])
+                    layer.strokeWeight(10.5)
+                    layer.arc(40-lsin(dir)*end,40+lcos(dir)*end,40,40,dir-width*15+180,dir+width*15+180)
+                    layer.strokeGradient(gradient[1])
+                    layer.strokeWeight(7.5)
+                    layer.arc(40-lsin(dir)*end,40+lcos(dir)*end,40,40,dir-width*15+180,dir+width*15+180)
+                }
+            }
+
+            return layer
+        case 206:
+            layer=createGraphics(200,160)
+            setupLayer(layer)
+
+            gradient=[new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80)]
+            gradient[0].colors(
+                0.00,color(255,247,189),
+                1.00,color(255,207,87)
+            )
+            gradient[1].colors(
+                0.00,color(255,207,87),
+                1.00,color(255,247,189)
+            )
+            gradient[2].colors(
+                0.00,color(255,239,123),
+                1.00,color(235,159,0)
+            )
+            gradient[3].colors(
+                0.00,color(235,159,0),
+                1.00,color(255,239,123)
+            )
+
+            layer.translate(0,40)
+            /*layer.background(0)
+            layer.fill(255)
+            layer.ellipse(50,40,100)
+            layer.ellipse(150,40,100)*/
+            layer.stroke(0)
+            layer.noFill()
+            layer.strokeJoin(ROUND)
+            for(let b=0,lb=4;b<lb;b++){
+                layer.strokeGradient(gradient[[2,0,3,1][b]])
+                layer.strokeWeight(10.5-b%2*3)
+                layer.beginShape()
+                for(let a=0,la=37;a<la;a++){
+                    let R=5
+                    let z=1.5
+                    let dir=((a+floor(la/4)+0.2)%la+0.1)/la*360
+                    let width=-z*lsin(dir)+sqrt((z*lsin(dir))**2-z**2+R**2)-3.65
+                    let end=[a%2==0?33:33+width*8]
+                    if(width>0){
+                        if(b<2){
+                            layer.vertex(160+lsin(dir)*end,40-lcos(dir)*end)
+                        }else{
+                            layer.vertex(40-lsin(dir)*end,40+lcos(dir)*end)
+                        }
+                    }
+                }
+                layer.endShape()
+            }
+
+            return layer
+        case 208:
             layer=createGraphics(72,45)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
