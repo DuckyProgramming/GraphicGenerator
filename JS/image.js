@@ -2,6 +2,8 @@ function setupImage(type){
     let gradient
     let lsin=(a)=>sin(a)
     let lcos=(a)=>cos(a)
+    let flashColor=(color)=>color
+    let upColor=(color)=>color
     switch(type){
         case 1:
             layer=createGraphics(500,500)
@@ -9206,12 +9208,516 @@ function setupImage(type){
             }
 
             return layer
+        case 207:
+            let next=setupImage(206)
+
+            layer=createGraphics(1000,1000)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.height/2)
+            layer.scale(50)
+
+            let colors={
+                skin:{head:[252,231,227],body:[248,208,197],legs:[244,214,207],arms:[255,231,227],button:[227,176,165]},
+                shoe:{main:[32,29,27],over:[15,11,10],inside:[99,87,82],under:[64,57,56],bow:[65,64,63],glow:[131,120,115]},
+            }
+            let spin=-30
+            let dir=-30
+            let fade=1
+            let graphicsL={middle:{x:0,y:-16.5},bottom:{x:0,y:0}}
+            let expand
+
+            expand=min(0.25,abs(lcos(dir)*0.5))
+            layer.fill(...flashColor(upColor(mergeColor(colors.shoe.under,colors.shoe.over,0.5),lcos(dir+spin)*5,[1,1,1])),fade)
+            layer.noStroke()
+            layer.ellipse(graphicsL.bottom.x,graphicsL.bottom.y+1.4-expand,4.2,3.6)
+            layer.fill(...flashColor(upColor(colors.shoe.under,lcos(dir+spin)*5,[1,1,1])),fade)
+            layer.ellipse(graphicsL.bottom.x,graphicsL.bottom.y+1.2-expand,4.2,3.6)
+            //heel
+
+            layer.fill(...flashColor(upColor(colors.shoe.main,lcos(dir+spin)*5,[1,1,1])),fade)
+            layer.noStroke()
+            layer.push()
+            layer.translate(graphicsL.bottom.x,graphicsL.bottom.y+0.375+expand)
+            layer.rotate(-dir)
+            layer.arc(0,0.25,5,5.5,-180,0)
+            layer.ellipse(0,0.25,5,2)
+            expand=max(0,abs(lcos(dir))*0.5-0.25)
+            layer.beginShape()
+            layer.vertex(-2.5,0.25)
+            layer.vertex(-2.5,0.5)
+            layer.bezierVertex(-2.5,1.75,-1.75-expand,4.5,-1,5.7)
+            layer.bezierVertex(-0.8,6,-0.4,6.4,0,6.4)
+            layer.bezierVertex(0.4,6.4,0.8,6,1,5.7)
+            layer.bezierVertex(1.75+expand,4.5,2.5,1.75,2.5,0.5)
+            layer.vertex(2.5,0.25)
+            layer.endShape()
+            //main
+            
+            layer.fill(...flashColor(upColor(colors.shoe.over,lcos(dir+spin)*5,[1,1,1])),fade)
+            layer.arc(0,0.25,4.5,5.5,-180,0)
+            layer.ellipse(0,0.25,4.5,2)
+            expand=max(0,abs(lcos(dir))*0.5-0.25)
+            layer.beginShape()
+            layer.vertex(-2.25,0.25)
+            layer.vertex(-2.25,0.5)
+            layer.bezierVertex(-2.25,1.75,-1.625-expand,4,-1,5.2)
+            layer.bezierVertex(-0.8,5.6,-0.4,6,0,6)
+            layer.bezierVertex(0.4,6,0.8,5.6,1,5.2)
+            layer.bezierVertex(1.625+expand,4,2,1.75,2.25,0.5)
+            layer.vertex(2,0.25)
+            layer.endShape()
+            layer.pop()
+            //slightly darker layer
+
+            expand=lcos(dir)*0.5
+            layer.fill(...flashColor(upColor(colors.shoe.inside,lcos(dir+spin)*10,[1,1,1])),fade)
+            layer.noStroke()
+            layer.push()
+            layer.translate(graphicsL.bottom.x,graphicsL.bottom.y)
+            layer.rotate(-dir)
+            layer.arc(0,0.25,4.2,3.6,-180,0)
+            layer.ellipse(0,0.25,4.2,2)
+            layer.beginShape()
+            layer.vertex(-2.1,0.25)
+            layer.vertex(2.1,0.25)
+            layer.vertex(2.1,1.25)
+            layer.bezierVertex(2.1,2,1.85,4.5+expand,0,4.5+expand)
+            layer.bezierVertex(-1.85,4.5+expand,-2.1,2,-2.1,1.25)
+            layer.vertex(-2.1,1)
+            layer.endShape()
+            layer.pop()
+            //rim
+
+            layer.noFill()
+            layer.stroke(...colors.shoe.glow,0.5*fade)
+            for(let a=0,la=3;a<la;a++){
+                layer.strokeWeight(0.3-a*0.1)
+                //layer.arc(graphicsL.bottom.x+4.75*lsin(dir),graphicsL.bottom.y+4.75*lcos(dir)+0.375,2.4+a*0.1,2.4+a*0.1,12-dir+a*12,78-dir-a*12)
+                layer.arc(
+                    graphicsL.bottom.x+4.8*lsin(dir)-0.3*lcos(dir),
+                    graphicsL.bottom.y+4.8*lcos(dir)+0.3*lsin(dir)+0.375,
+                    3+a*0.1,3+a*0.1,12-dir+a*12,78-dir-a*12
+                )
+            }
+            //glow
+            
+            layer.stroke(...flashColor(upColor(colors.skin.legs,lcos(dir+spin)*10,[1,1,1])),fade)
+            layer.strokeWeight(4)
+            layer.line(graphicsL.middle.x,graphicsL.middle.y,graphicsL.bottom.x,graphicsL.bottom.y)
+
+            expand=lcos(dir)*0.5
+            layer.fill(...flashColor(upColor(colors.skin.legs,lcos(dir+spin)*10,[1,1,1])),fade)
+            layer.noStroke()
+            layer.push()
+            layer.translate(graphicsL.bottom.x,graphicsL.bottom.y)
+            layer.rotate(-dir)
+            layer.arc(0,0.25,4,3.5,-180,0)
+            layer.ellipse(0,0.25,4,2)
+            layer.beginShape()
+            layer.vertex(-2,0.25)
+            layer.vertex(2,0.25)
+            layer.vertex(2,1.25)
+            layer.bezierVertex(2,2,1.75,4.25+expand,0,4.25+expand)
+            layer.bezierVertex(-1.75,4.25+expand,-2,2,-2,1.25)
+            layer.endShape()
+            layer.pop()
+
+            layer.push()
+            layer.translate(graphicsL.bottom.x*0.98+graphicsL.middle.x*0.02,graphicsL.bottom.y*0.98+graphicsL.middle.y*0.02+0.5)
+            layer.rotate(-dir)
+            expand=lcos(dir)*0.25
+            layer.translate(0,5+expand)
+            layer.scale(0.25)
+            layer.image(next,0,0,12,9.6)
+            layer.pop()
+
+            return layer
         case 208:
-            layer=createGraphics(72,45)
+            let a208=0
+            if(a208==0){
+                let next=setupImage(209)
+                layer=createGraphics(1000,1000)
+                setupLayer(layer)
+                layer.translate(layer.width/2,layer.height/2)
+                layer.scale(50)
+                let colors={
+                    skin:{head:[252,231,227],body:[248,208,197],legs:[244,214,207],arms:[255,231,227],button:[227,176,165]},
+                    shoe:{main:[32,29,27],over:[15,11,10],inside:[99,87,82],under:[64,57,56],bow:[65,64,63],glow:[131,120,115]},
+                }
+                let spin=-60
+                let dir=-30
+                let fade=1
+                let graphicsL={middle:{x:0,y:-16.5},bottom:{x:0,y:0}}
+                let expand=lcos(dir)*0.25
+
+                layer.fill(...flashColor(upColor(mergeColor(colors.shoe.under,colors.shoe.over,0.5),lcos(dir+spin)*5,[1,1,1])),fade)
+                layer.noStroke()
+                layer.ellipse(graphicsL.bottom.x-lsin(dir)*0.3,graphicsL.bottom.y-lcos(dir)*0.3+1.4-min(0.25,abs(lcos(dir)*0.5)),4,3)
+                layer.fill(...flashColor(upColor(colors.shoe.under,lcos(dir+spin)*5,[1,1,1])),fade)
+                layer.ellipse(graphicsL.bottom.x-lsin(dir)*0.3,graphicsL.bottom.y-lcos(dir)*0.3+1.2-min(0.25,abs(lcos(dir)*0.5)),4,3)
+                //heel
+
+                layer.fill(...flashColor(upColor(colors.shoe.main,lcos(dir+spin)*5,[1,1,1])),fade)
+                layer.noStroke()
+                layer.push()
+                layer.translate(graphicsL.bottom.x,graphicsL.bottom.y+0.375)
+                layer.rotate(-dir)
+                
+                let pos=[
+                    [-2.4,0.25],
+                    [-2.4,0.75],
+                    [-2.3,1.5],
+                    [-2.25,2.25],
+                    [-2.2,4],
+                    [-1.6,5.5],
+                    [-1.1,6.25],
+                    [-0.8,6.75],
+                    [-0.4,7],
+                    [0,7],
+                ]
+                for(let a=0,la=pos.length-1;a<la;a++){
+                    pos.splice(la+1,0,[-pos[a][0],pos[a][1]])
+                }
+                layer.arc(0,0.25,pos[0][0]*2,5.5,-180,0)
+                layer.ellipse(0,0.25,pos[0][0]*2,2)
+                layer.beginShape()
+                layer.vertex(pos[0][0],pos[0][1])
+                for(let a=0,la=floor(pos.length/3);a<la;a++){
+                    layer.bezierVertex(
+                        pos[a*3+1][0],pos[a*3+1][1],
+                        pos[a*3+2][0],pos[a*3+2][1],
+                        pos[a*3+3][0],pos[a*3+3][1],
+                    )
+                }
+                layer.endShape()
+                //main
+
+                /*layer.fill(0,0.5)
+                expand=max(0,abs(lcos(dir))*0.5-0.25)
+                layer.beginShape()
+                layer.vertex(-2.5,0.25)
+                layer.vertex(-2.5,0.5)
+                layer.bezierVertex(-2.5,1.75,-1.75-expand,4.5,-1,5.7)
+                layer.bezierVertex(-0.8,6,-0.4,6.4,0,6.4)
+                layer.bezierVertex(0.4,6.4,0.8,6,1,5.7)
+                layer.bezierVertex(1.75+expand,4.5,2.5,1.75,2.5,0.5)
+                layer.vertex(2.5,0.25)
+                layer.endShape()*/
+                //main
+                
+                /*layer.fill(...flashColor(upColor(colors.shoe.over,lcos(dir+spin)*5,[1,1,1])),fade)
+                layer.arc(0,0.25,4.5,5.5,-180,0)
+                layer.ellipse(0,0.25,4.5,2)
+                expand=max(0,abs(lcos(dir))*0.5-0.25)
+                layer.beginShape()
+                layer.vertex(-2.25,0.25)
+                layer.vertex(-2.25,0.5)
+                layer.bezierVertex(-2.25,1.75,-1.625-expand,4,-1,5.2)
+                layer.bezierVertex(-0.8,5.6,-0.4,6,0,6)
+                layer.bezierVertex(0.4,6,0.8,5.6,1,5.2)
+                layer.bezierVertex(1.625+expand,4,2,1.75,2.25,0.5)
+                layer.vertex(2,0.25)
+                layer.endShape()*/
+                //slightly darker layer
+
+                layer.fill(...flashColor(upColor(colors.shoe.over,lcos(dir+spin)*5,[1,1,1])),fade)
+                pos=[
+                    [-2.2,0.25],
+                    [-2.2,0.75],
+                    [-2.1,1.5],
+                    [-2.05,2.25],
+                    [-2,4],
+                    [-1.4,5.5],
+                    [-0.9,6.25],
+                    [-0.6,6.75],
+                    [-0.2,7],
+                    [0,7],
+                ]
+                for(let a=0,la=pos.length-1;a<la;a++){
+                    pos.splice(la+1,0,[-pos[a][0],pos[a][1]])
+                }
+                layer.arc(0,0.25,pos[0][0]*2,5.3,-180,0)
+                layer.ellipse(0,0.25,pos[0][0]*2,2)
+                layer.beginShape()
+                layer.vertex(pos[0][0],pos[0][1])
+                for(let a=0,la=floor(pos.length/3);a<la;a++){
+                    layer.bezierVertex(
+                        pos[a*3+1][0],pos[a*3+1][1],
+                        pos[a*3+2][0],pos[a*3+2][1],
+                        pos[a*3+3][0],pos[a*3+3][1],
+                    )
+                }
+                layer.endShape()
+                //slightly darker layer
+
+                layer.pop()
+
+                if(lcos(dir)<0){
+                    layer.push()
+                    layer.translate(graphicsL.bottom.x*0.98+graphicsL.middle.x*0.02,graphicsL.bottom.y*0.98+graphicsL.middle.y*0.02+0.5)
+                    layer.rotate(-dir)
+                    //expand=lcos(dir)*0.25
+                    layer.translate(0,5.6+expand*0.375)
+                    layer.scale(0.25)
+                    layer.image(next,0,0,12,9.6)
+                    layer.pop()
+                }
+                //buckle
+
+                /*expand=lcos(dir)*0.5
+                layer.fill(...flashColor(upColor(colors.shoe.inside,lcos(dir+spin)*10,[1,1,1])),fade)
+                layer.noStroke()
+                layer.push()
+                layer.translate(graphicsL.bottom.x,graphicsL.bottom.y)
+                layer.rotate(-dir)
+                layer.arc(0,0.25,4.2,3.6,-180,0)
+                layer.ellipse(0,0.25,4.2,2)
+                layer.beginShape()
+                layer.vertex(-2.1,0.25)
+                layer.vertex(2.1,0.25)
+                layer.vertex(2.1,1.25)
+                layer.bezierVertex(2.1,2,1.85,4.5+expand,0,4.5+expand)
+                layer.bezierVertex(-1.85,4.5+expand,-2.1,2,-2.1,1.25)
+                layer.vertex(-2.1,1)
+                layer.endShape()
+                layer.pop()*/
+                //rim
+
+                layer.fill(...flashColor(upColor(colors.shoe.inside,lcos(dir+spin)*10,[1,1,1])),fade)
+                layer.noStroke()
+                layer.push()
+                layer.translate(graphicsL.bottom.x,graphicsL.bottom.y)
+                layer.rotate(-dir)
+                pos=[
+                    [-2.1,0],
+                    [-2.1,0.5],
+                    [-2.1,0.75],
+                    [-2.1,1],
+                    [-2.1,2.75],
+                    [-1.75,3.8+expand],
+                    [-1.25,4.4+expand],
+                    [-0.8,4.9+expand],
+                    [-0.3,4.95+expand],
+                    [0,4.95+expand],
+                ]
+                for(let a=0,la=pos.length-1;a<la;a++){
+                    pos.splice(la+1,0,[-pos[a][0],pos[a][1]])
+                }
+                layer.arc(0,0,-pos[0][0]*2,-pos[0][0]*2,-180,0)
+                layer.ellipse(0,0,pos[0][0]*2,2)
+                layer.beginShape()
+                layer.vertex(pos[0][0],pos[0][1])
+                for(let a=0,la=floor(pos.length/3);a<la;a++){
+                    layer.bezierVertex(
+                        pos[a*3+1][0],pos[a*3+1][1],
+                        pos[a*3+2][0],pos[a*3+2][1],
+                        pos[a*3+3][0],pos[a*3+3][1],
+                    )
+                }
+                layer.endShape()
+                layer.pop()
+                //rim
+
+                /*layer.noFill()
+                layer.stroke(...colors.shoe.glow,0.5*fade)
+                for(let a=0,la=3;a<la;a++){
+                    layer.strokeWeight(0.3-a*0.1)
+                    //layer.arc(graphicsL.bottom.x+4.75*lsin(dir),graphicsL.bottom.y+4.75*lcos(dir)+0.375,2.4+a*0.1,2.4+a*0.1,12-dir+a*12,78-dir-a*12)
+                    layer.arc(
+                        graphicsL.bottom.x+4.8*lsin(dir)-0.3*lcos(dir),
+                        graphicsL.bottom.y+4.8*lcos(dir)+0.3*lsin(dir)+0.375,
+                        3+a*0.1,3+a*0.1,12-dir+a*12,78-dir-a*12
+                    )
+                }
+                //glow*/
+                layer.noFill()
+                layer.stroke(...colors.shoe.glow,0.2*fade)
+                for(let a=0,la=6;a<la;a++){
+                    layer.strokeWeight(0.3-a*0.05)
+                    //layer.arc(graphicsL.bottom.x+4.75*lsin(dir),graphicsL.bottom.y+4.75*lcos(dir)+0.375,2.4+a*0.1,2.4+a*0.1,12-dir+a*12,78-dir-a*12)
+                    layer.arc(
+                        graphicsL.bottom.x+5.25*lsin(dir)-0.3*lcos(dir),
+                        graphicsL.bottom.y+5.25*lcos(dir)+0.3*lsin(dir)+0.375,
+                        3+a*0.05,3+a*0.05,12-dir+a*6,78-dir-a*6
+                    )
+                }
+                //glow
+                
+                layer.stroke(...flashColor(upColor(colors.skin.legs,lcos(dir+spin)*10,[1,1,1])),fade)
+                layer.strokeWeight(4)
+                layer.line(graphicsL.middle.x,graphicsL.middle.y,graphicsL.bottom.x,graphicsL.bottom.y)
+
+                layer.fill(...flashColor(upColor(colors.skin.legs,lcos(dir+spin)*10,[1,1,1])),fade)
+                layer.noStroke()
+                layer.push()
+                layer.translate(graphicsL.bottom.x,graphicsL.bottom.y)
+                layer.rotate(-dir)
+                pos=[
+                    [-2,0.25],
+                    [-2,0.5],
+                    [-2,0.75],
+                    [-2,1],
+                    [-2,2.75],
+                    [-1.65,3.7+expand],
+                    [-1.2,4.25+expand],
+                    [-0.8,4.75+expand],
+                    [-0.3,4.8+expand],
+                    [0,4.8+expand],
+                ]
+                for(let a=0,la=pos.length-1;a<la;a++){
+                    pos.splice(la+1,0,[-pos[a][0],pos[a][1]])
+                }
+                layer.arc(0,0.25,pos[0][0]*2,3.5,-180,0)
+                layer.ellipse(0,0.25,pos[0][0]*2,2)
+                layer.beginShape()
+                layer.vertex(pos[0][0],pos[0][1])
+                for(let a=0,la=floor(pos.length/3);a<la;a++){
+                    layer.bezierVertex(
+                        pos[a*3+1][0],pos[a*3+1][1],
+                        pos[a*3+2][0],pos[a*3+2][1],
+                        pos[a*3+3][0],pos[a*3+3][1],
+                    )
+                }
+                layer.endShape()
+                /*layer.arc(0,0.25,4,3.5,-180,0)
+                layer.ellipse(0,0.25,4,2)
+                layer.beginShape()
+                layer.vertex(-2,0.25)
+                layer.vertex(2,0.25)
+                layer.vertex(2,1.25)
+                layer.bezierVertex(2,2,1.75,4.25+expand,0,4.25+expand)
+                layer.bezierVertex(-1.75,4.25+expand,-2,2,-2,1.25)
+                layer.endShape()*/
+                //instep
+
+                layer.pop()
+
+                if(lcos(dir)>=0){
+                    layer.push()
+                    layer.translate(graphicsL.bottom.x*0.98+graphicsL.middle.x*0.02,graphicsL.bottom.y*0.98+graphicsL.middle.y*0.02+0.5)
+                    layer.rotate(-dir)
+                    //expand=lcos(dir)*0.25
+                    layer.translate(0,5.6+expand*0.375)
+                    layer.scale(0.25)
+                    layer.image(next,0,0,12,9.6)
+                    layer.pop()
+                }
+                //buckle
+            }
+
+            /*
+            sole line
+            clear heel indication
+            */
+
+            return layer
+        case 209:
+            layer=createGraphics(200,160)
+            setupLayer(layer)
+
+            gradient=[new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80),new p5.LinearGradient(80)]
+            gradient[0].colors(
+                0.00,color(255,247,189),
+                1.00,color(255,207,87)
+            )
+            gradient[1].colors(
+                0.00,color(255,207,87),
+                1.00,color(255,247,189)
+            )
+            gradient[2].colors(
+                0.00,color(255,239,123),
+                1.00,color(235,159,0)
+            )
+            gradient[3].colors(
+                0.00,color(235,159,0),
+                1.00,color(255,239,123)
+            )
+            gradient[4].colors(
+                0.00,color(255,243,156),
+                1.00,color(245,183,0)
+            )
+            gradient[5].colors(
+                0.00,color(245,183,0),
+                1.00,color(255,243,156)
+            )
+
+            layer.translate(0,40)
+            /*layer.background(0)
+            layer.fill(255)
+            layer.ellipse(50,40,100)
+            layer.ellipse(150,40,100)*/
+
+            layer.fillGradient(gradient[5])
+            layer.ellipse(50,40,90)
+            layer.fillGradient(gradient[4])
+            layer.ellipse(150,40,90)
+            layer.erase()
+            layer.ellipse(38,40,72)
+            layer.ellipse(162,40,72)
+            layer.noErase()
+
+            layer.stroke(0)
+            layer.noFill()
+            layer.strokeJoin(ROUND)
+            for(let b=0,lb=4;b<lb;b++){
+                layer.strokeGradient(gradient[[2,0,3,1][b]])
+                layer.strokeWeight(8-b%2*4)
+                layer.beginShape()
+                let points=[]
+                let flip=b<2?1:0
+                for(let a=0,la=37;a<la;a++){
+                    let R=5
+                    let z=1.5
+                    let dir=((a+floor(la/4)+0.2)%la+0.1)/la*360+5-flip*10
+                    if(dir<100){
+                        dir+=360
+                    }
+                    let width=-z*lsin(dir)+sqrt((z*lsin(dir))**2-z**2+R**2)-3.65
+                    let end=a%2==0?35:35+width*8
+                    if(width>0){
+                        points.push([dir,end])
+                    }
+                        /*if(b<2){
+                            //layer.vertex(160+lsin(dir)*end,40-lcos(dir)*end)
+                        }else{
+                            if(a==0){
+                                layer.vertex(40-lsin(dir)*end,40+lcos(dir)*end)
+                            }else{
+                                layer.bezierVertex(
+                                    40-lsin(dir)*end,40+lcos(dir)*end,
+                                    40-lsin(dir)*end,40+lcos(dir)*end,
+                                    40-lsin(dir)*end,40+lcos(dir)*end,
+                                )
+                            }
+                        }*/
+                }
+                for(let a=0,la=points.length;a<la;a++){
+                    let point=points[a]
+                    if(a==0){
+                        layer.vertex(40+flip*120+(flip*2-1)*lsin(point[0])*point[1],40+lcos(point[0])*point[1])
+                    }else{
+                        let last=points[a-1]
+                        let w=[
+                            ((point[1]**4)/3+(last[1]**4)*2/3)**0.25,
+                            ((point[1]**4)*2/3+(last[1]**4)/3)**0.25,
+                        ]
+                        layer.bezierVertex(
+                            40+flip*120+(flip*2-1)*lsin(point[0]/3+last[0]*2/3)*w[0],40+lcos(point[0]/3+last[0]*2/3)*w[0],
+                            40+flip*120+(flip*2-1)*lsin(point[0]*2/3+last[0]/3)*w[1],40+lcos(point[0]*2/3+last[0]/3)*w[1],
+                            40+flip*120+(flip*2-1)*lsin(point[0])*point[1],40+lcos(point[0])*point[1],
+                        )
+                    }
+                }
+                layer.endShape()
+            }
+
+            return layer
+        case 210:
+            layer=createGraphics(100,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
 
             return layer
     }
     return 0
-} 
+}   
