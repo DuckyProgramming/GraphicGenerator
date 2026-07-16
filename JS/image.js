@@ -9713,6 +9713,82 @@ function setupImage(type){
 
             return layer
         case 210:
+            layer=createGraphics(200,260)
+            setupLayer(layer)
+            layer.translate(layer.width/2,layer.width/2)
+
+            //layer.background(0)
+
+            layer.noFill()
+            layer.stroke(218,74,69)
+            layer.strokeWeight(5)
+            for(let a=0,la=5;a<la;a++){
+                layer.beginShape()
+                layer.vertex(0,0)
+                layer.bezierVertex(-21,-30,-28,-40,-7,-70)
+                layer.vertex(0,-56)
+                layer.vertex(7,-70)
+                layer.bezierVertex(28,-40,21,-30,0,0)
+                layer.endShape()
+                layer.rotate(360/la)
+            }
+            layer.bezier(0,0,-15,40,-20,80,-20,120)
+            layer.bezier(0,0,15,40,20,80,20,120)
+
+            let flower=(layer,size,color,width,height,fade,extent)=>{
+                layer.push()
+                layer.scale(size)
+                layer.strokeWeight(0.6)
+                layer.strokeJoin(ROUND)
+                for(let a=0,la=extent;a<la;a++){
+                    for(let b=0,lb=5;b<lb;b++){
+                        layer.fill(...mergeColor(color[0],color[1],a/la),fade)
+                        layer.stroke(...mergeColor(color[0],color[1],a/la),fade)
+                        if(a<la/2){
+                            layer.beginShape()
+                            layer.vertex(0,0)
+                            layer.bezierVertex(-width[0]*(1-a/la*2),-30,-width[1]*(1-a/la*2),-40,-width[2],-70)
+                            layer.vertex(-width[2]*(1-(a+1)/la*2),-height[0])
+                            layer.endShape(CLOSE)
+                        }
+                        layer.rotate(-72)
+                        layer.beginShape()
+                        layer.vertex(0,0)
+                        layer.bezierVertex(width[0],-30,width[1],-40,width[2],-70)
+                        if(a>=la/2){
+                            layer.vertex(width[2]*(-1+a/la*2),-height[0])
+                            layer.bezierVertex(width[1]*(-1+a/la*2),-40,width[0]*(-1+a/la*2),-30,0,0)
+                        }else{
+                            layer.vertex(0,-height[0])
+                        }
+                        layer.endShape(CLOSE)
+                    }
+                }
+                layer.noStroke()
+                layer.fill(...color[2],fade)
+                for(let a=0,la=5;a<la;a++){
+                    layer.rotate(60)
+                    layer.quad(0,-4,width[3],-16,0,-24,-width[3],-16)
+                    layer.rotate(12)
+                }
+                layer.fill(...color[3],fade)
+                layer.ellipse(0,0,12,12)
+                layer.pop()
+            }
+            layer.push()
+            layer.translate(-20,120)
+            layer.scale(0.5)
+            flower(layer,0.5,[[241,170,189],[250,222,226],[240,207,211],[254,228,232]],[20,40,12,4],[54],1,100)
+            layer.pop()
+
+            layer.push()
+            layer.translate(20,120)
+            layer.scale(0.5)
+            flower(layer,0.5,[[241,170,189],[250,222,226],[240,207,211],[254,228,232]],[20,40,12,4],[54],1,100)
+            layer.pop()
+
+            return layer
+        case 211:
             layer=createGraphics(100,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
