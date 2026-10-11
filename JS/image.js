@@ -6,6 +6,7 @@ function setupImage(type){
     let upColor=(color)=>color
     switch(type){
         case 1:
+            //nadeshiko
             layer=createGraphics(500,500)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -239,6 +240,7 @@ function setupImage(type){
             }
             return layer
         case 2:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -249,6 +251,7 @@ function setupImage(type){
             layer.triangle(90,-45,30,-45,60,-45-30*sqrt(3))
             return layer
         case 3:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -259,6 +262,7 @@ function setupImage(type){
             regTriangle(layer,50*sqrt(3),-70,45,45,0)
             return layer
         case 4:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -268,6 +272,7 @@ function setupImage(type){
             regTriangle(layer,70,40,50,150,60)
             return layer
         case 5:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -280,6 +285,7 @@ function setupImage(type){
             regTriangle(layer,0,30,60,60,60)
             return layer
         case 6:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -291,6 +297,7 @@ function setupImage(type){
             regTriangle(layer,0,30,60,60,0)
             return layer
         case 7:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -304,6 +311,7 @@ function setupImage(type){
             layer.rect(40,40,100,20)
             return layer
         case 8:
+            //army, chlata
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -335,6 +343,7 @@ function setupImage(type){
             layer.quad(0,-30,-30,0,0,30,30,0)
             return layer
         case 9:
+            //corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -359,6 +368,7 @@ function setupImage(type){
             }
             return layer
         case 10:
+            //corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -397,6 +407,7 @@ function setupImage(type){
             }
             return layer
         case 11:
+            //corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -425,6 +436,7 @@ function setupImage(type){
             }
             return layer
         case 12:
+            //corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -468,6 +480,7 @@ function setupImage(type){
             }
             return layer
         case 13:
+            //corps pz
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -485,6 +498,7 @@ function setupImage(type){
             layer.line(-40,-60,40,-60)
             return layer
         case 14:
+            //corps pz
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -503,6 +517,7 @@ function setupImage(type){
             layer.line(-20,40,-40,60)
             return layer
         case 15:
+            //corps pz
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -529,6 +544,7 @@ function setupImage(type){
             layer.line(60,60,90,60)
             return layer
         case 16:
+            //corps pz
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -549,6 +565,7 @@ function setupImage(type){
             layer.line(40,-40,40,-80)
             return layer
         case 17:
+            //duck
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -625,6 +642,7 @@ function setupImage(type){
             }
             return layer
         case 18:
+            //duck
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -737,6 +755,7 @@ function setupImage(type){
             }
             return layer
         case 19:
+            //duck
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -901,6 +920,7 @@ function setupImage(type){
             }
             return layer
         case 20:
+            //duck guards
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -973,6 +993,7 @@ function setupImage(type){
             }
             return layer
         case 21:
+            //duck guards
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1045,6 +1066,7 @@ function setupImage(type){
             }
             return layer
         case 22:
+            //duck guards
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1112,6 +1134,7 @@ function setupImage(type){
             }
             return layer
         case 23:
+            //duck tank
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1250,6 +1273,7 @@ function setupImage(type){
             }
             return layer
         case 24:
+            //duck front
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1282,6 +1306,7 @@ function setupImage(type){
             layer.quad(-60,0,0,-60,0,60,60,0)
             return layer
         case 25:
+            //riga
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1312,6 +1337,7 @@ function setupImage(type){
 
             return layer
         case 26:
+            //romanian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1345,6 +1371,7 @@ function setupImage(type){
 
             return layer
         case 27:
+            //romanian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1365,6 +1392,7 @@ function setupImage(type){
 
             return layer
         case 28:
+            //romanian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1449,6 +1477,7 @@ function setupImage(type){
             
             return layer
         case 29:
+            //romanian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1475,6 +1504,7 @@ function setupImage(type){
 
             return layer
         case 30:
+            //idk unit
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1493,6 +1523,7 @@ function setupImage(type){
 
             return layer
         case 31:
+            //idk unit
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1511,6 +1542,7 @@ function setupImage(type){
 
             return layer
         case 32:
+            //idk unit
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1527,6 +1559,7 @@ function setupImage(type){
 
             return layer
         case 33:
+            //skanderbeg
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1627,6 +1660,7 @@ function setupImage(type){
 
             return layer
         case 34:
+            //coast
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1679,6 +1713,7 @@ function setupImage(type){
 
             return layer
         case 35:
+            //coast
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1713,9 +1748,10 @@ function setupImage(type){
 
             return layer
         case 36:
+            //management
             layer=createGraphics(300,300)
             setupLayer(layer)
-            layer.translate(layer.width/2,slayer.height/2)
+            layer.translate(layer.width/2,layer.height/2)
 
             let sizescale=3
             //0-army group
@@ -1861,6 +1897,7 @@ function setupImage(type){
 
             return layer
         case 37:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -1904,6 +1941,7 @@ function setupImage(type){
 
             return layer
         case 38:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2377,6 +2415,7 @@ function setupImage(type){
 
             return layer
         case 39:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2424,6 +2463,7 @@ function setupImage(type){
 
             return layer
         case 40:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2447,6 +2487,7 @@ function setupImage(type){
 
             return layer
         case 41:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2462,6 +2503,7 @@ function setupImage(type){
             }
             return layer
         case 42:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2498,6 +2540,7 @@ function setupImage(type){
 
             return layer
         case 43:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2531,6 +2574,7 @@ function setupImage(type){
 
             return layer
         case 44:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2567,6 +2611,7 @@ function setupImage(type){
 
             return layer
         case 45:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2584,6 +2629,7 @@ function setupImage(type){
 
             return layer
         case 46:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2602,6 +2648,7 @@ function setupImage(type){
 
             return layer
         case 47:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2628,8 +2675,9 @@ function setupImage(type){
             layer.rotate(-30)
             layer.rect(0,0,90,12,3)
 
-            return layerz
+            return layer
         case 48:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2672,6 +2720,7 @@ function setupImage(type){
 
             return layer
         case 49:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2691,6 +2740,7 @@ function setupImage(type){
 
             return layer
         case 50:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2712,6 +2762,7 @@ function setupImage(type){
 
             return layer
         case 51:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2734,6 +2785,7 @@ function setupImage(type){
 
             return layer
         case 52:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2757,6 +2809,7 @@ function setupImage(type){
 
             return layer
         case 53:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2789,6 +2842,7 @@ function setupImage(type){
 
             return layer
         case 54:
+            //duck guards
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2864,6 +2918,7 @@ function setupImage(type){
             }
             return layer
         case 55:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2885,6 +2940,7 @@ function setupImage(type){
 
             return layer
         case 56:
+            //sector
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2907,6 +2963,7 @@ function setupImage(type){
 
             return layer
         case 57:
+            //sector
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2930,6 +2987,7 @@ function setupImage(type){
 
             return layer
         case 58:
+            //sector
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2952,6 +3010,7 @@ function setupImage(type){
 
             return layer
         case 59:
+            //sector
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -2983,6 +3042,7 @@ function setupImage(type){
 
             return layer
         case 60:
+            //sector
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3008,6 +3068,7 @@ function setupImage(type){
 
             return layer
         case 61:
+            //sector
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3037,6 +3098,7 @@ function setupImage(type){
 
             return layer
         case 62:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3064,6 +3126,7 @@ function setupImage(type){
 
             return layer
         case 63:
+            //kikusui
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3264,6 +3327,7 @@ function setupImage(type){
 
             return layer
         case 64:
+            //kikusui
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3299,6 +3363,7 @@ function setupImage(type){
 
             return layer
         case 65:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3434,6 +3499,7 @@ function setupImage(type){
 
             return layer
         case 66:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3477,6 +3543,7 @@ function setupImage(type){
 
             return layer
         case 67:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3506,6 +3573,7 @@ function setupImage(type){
 
             return layer
         case 68:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3520,6 +3588,7 @@ function setupImage(type){
 
             return layer
         case 69:
+            //abydos
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3640,6 +3709,7 @@ function setupImage(type){
 
             return layer
         case 70:
+            //liyue
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3660,6 +3730,7 @@ function setupImage(type){
 
             return layer
         case 71:
+            //liyue
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3691,6 +3762,7 @@ function setupImage(type){
 
             return layer
         case 72:
+            //liyue
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3717,6 +3789,7 @@ function setupImage(type){
 
             return layer
         case 73:
+            //farlands
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3762,6 +3835,7 @@ function setupImage(type){
 
             return layer
         case 74:
+            //idk minor
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3812,6 +3886,7 @@ function setupImage(type){
 
             return layer
         case 75:
+            //named brigades
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3837,6 +3912,7 @@ function setupImage(type){
 
             return layer
         case 76:
+            //named brigades
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3868,6 +3944,7 @@ function setupImage(type){
 
             return layer
         case 77:
+            //named brigades
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3893,6 +3970,7 @@ function setupImage(type){
 
             return layer
         case 78:
+            //named brigades
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3922,6 +4000,7 @@ function setupImage(type){
             
             return layer
         case 79:
+            //corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3960,6 +4039,7 @@ function setupImage(type){
             }
             return layer
         case 80:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -3993,6 +4073,7 @@ function setupImage(type){
             layer.image(sublayer,0,0)
             return layer
         case 81:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4014,6 +4095,7 @@ function setupImage(type){
 
             return layer
         case 82:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4028,6 +4110,7 @@ function setupImage(type){
 
             return layer
         case 83:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4068,6 +4151,7 @@ function setupImage(type){
 
             return layer
         case 84:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4138,14 +4222,14 @@ function setupImage(type){
             layer.endShape()*/
             //mtges
 
-            /*layer.line(-120,-80,-120,120)
+            layer.line(-120,-80,-120,120)
             layer.line(-120,-120,120,-120)
             layer.line(80,120,-120,120)
             layer.line(120,120,120,-120)
             layer.line(0,-120,0,80)
             layer.line(-80,0,120,0)
             layer.strokeCap(ROUND)
-            layer.ellipse(60,-60,10)*/
+            layer.ellipse(60,-60,10)
             //2103atd
 
             /*layer.strokeWeight(20)
@@ -4158,6 +4242,7 @@ function setupImage(type){
 
             return layer
         case 85:
+            //hungarian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4196,6 +4281,7 @@ function setupImage(type){
 
             return layer
         case 86:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4245,6 +4331,7 @@ function setupImage(type){
 
             return layer
         case 87:
+            //asagian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4321,6 +4408,7 @@ function setupImage(type){
 
             return layer
         case 88:
+            //artbrig
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4330,14 +4418,14 @@ function setupImage(type){
             layer.fill(255)
             layer.ellipse(0,0,275)
 
-            /*layer.fill(225,50,50)
+            layer.fill(225,50,50)
             layer.arc(0,0,225,225,90,270)
             layer.fill(25)
             layer.arc(0,0,225,225,-90,90)
             layer.fill(255)
             layer.ellipse(0,0,125)
             layer.fill(0)
-            layer.triangle(30,5,5,30,-25,-25)*/
+            layer.triangle(30,5,5,30,-25,-25)
             //9vrb
 
             /*layer.fill(0,100,0)
@@ -4588,6 +4676,7 @@ function setupImage(type){
 
             return layer
         case 89:
+            //slovak
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4609,6 +4698,7 @@ function setupImage(type){
 
             return layer
         case 90:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -4634,6 +4724,7 @@ function setupImage(type){
 
             return layer
         case 91:
+            //ss
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5048,6 +5139,7 @@ function setupImage(type){
 
             return layer
         case 92:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5066,6 +5158,7 @@ function setupImage(type){
 
             return layer
         case 93:
+            //chlata 2?
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5122,6 +5215,7 @@ function setupImage(type){
 
             return layer
         case 94:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5147,6 +5241,7 @@ function setupImage(type){
 
             return layer
         case 95:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5168,6 +5263,7 @@ function setupImage(type){
 
             return layer
         case 96:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5191,6 +5287,7 @@ function setupImage(type){
 
             return layer
         case 97:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5218,6 +5315,7 @@ function setupImage(type){
 
             return layer
         case 98:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5245,6 +5343,7 @@ function setupImage(type){
 
             return layer
         case 99:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5264,6 +5363,7 @@ function setupImage(type){
 
             return layer
         case 100:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5284,6 +5384,7 @@ function setupImage(type){
 
             return layer
         case 101:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5305,6 +5406,7 @@ function setupImage(type){
 
             return layer
         case 102:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5343,6 +5445,7 @@ function setupImage(type){
 
             return layer
         case 103:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5361,6 +5464,7 @@ function setupImage(type){
 
             return layer
         case 104:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5484,6 +5588,7 @@ function setupImage(type){
 
             return layer
         case 105:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5513,6 +5618,7 @@ function setupImage(type){
 
             return layer
         case 106:
+            //sakura
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5542,6 +5648,7 @@ function setupImage(type){
             
             return layer
         case 107:
+            //shuichi
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5558,6 +5665,7 @@ function setupImage(type){
 
             return layer
         case 108:
+            //asagi
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5565,7 +5673,7 @@ function setupImage(type){
             layer.scale(45)
             layer.fill(133,147,205)
             regPoly(layer,0,0,10,3,3,0)
-            layer.fill(227,206,225,fade)
+            layer.fill(227,206,225)
             for(let a=0,la=10;a<la;a++){
                 layer.rotate(360/la)
                 layer.ellipse(0,1.2+a%2*0.6,0.6-a%2*0.45,2.7-a%2*0.9)
@@ -5578,6 +5686,7 @@ function setupImage(type){
 
             return layer
         case 109:
+            //asagi
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5607,6 +5716,7 @@ function setupImage(type){
 
             return layer
         case 110:
+            //kanata
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5645,6 +5755,7 @@ function setupImage(type){
 
             return layer
         case 111:
+            //sagiri
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5661,6 +5772,7 @@ function setupImage(type){
 
             return layer
         case 112:
+            //lira
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5686,6 +5798,7 @@ function setupImage(type){
 
             return layer
         case 113:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5707,6 +5820,7 @@ function setupImage(type){
 
             return layer
         case 114:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5744,6 +5858,7 @@ function setupImage(type){
 
             return layer
         case 115:
+            //lunasa
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5766,6 +5881,7 @@ function setupImage(type){
 
             return layer
         case 116:
+            //sora
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5785,6 +5901,7 @@ function setupImage(type){
 
             return layer
         case 117:
+            //kasumi
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5805,6 +5922,7 @@ function setupImage(type){
             
             return layer
         case 118:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5825,6 +5943,7 @@ function setupImage(type){
 
             return layer
         case 119:
+            //akebono
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5848,6 +5967,7 @@ function setupImage(type){
 
             return layer
         case 120:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5888,6 +6008,7 @@ function setupImage(type){
 
             return layer
         case 121:
+            //guizhong
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5906,6 +6027,7 @@ function setupImage(type){
 
             return layer
         case 122:
+            //chino
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5925,6 +6047,7 @@ function setupImage(type){
 
             return layer
         case 123:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5956,6 +6079,7 @@ function setupImage(type){
 
             return layer
         case 124:
+            //nahida
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -5974,6 +6098,7 @@ function setupImage(type){
 
             return layer
         case 125:
+            //raiden
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6000,6 +6125,7 @@ function setupImage(type){
 
             return layer
         case 126:
+            //nadeshiko
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6225,6 +6351,7 @@ function setupImage(type){
 
             return layer
         case 127:
+            //shiroko
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6252,6 +6379,7 @@ function setupImage(type){
 
             return layer
         case 128:
+            //mika
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6286,6 +6414,7 @@ function setupImage(type){
 
             return layer
         case 129:
+            //blue archive idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6327,6 +6456,7 @@ function setupImage(type){
 
             return layer
         case 130:
+            //kokomi
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6368,6 +6498,7 @@ function setupImage(type){
 
             return layer
         case 131:
+            //kazakiri
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6473,6 +6604,7 @@ function setupImage(type){
 
             return layer
         case 132:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6511,6 +6643,7 @@ function setupImage(type){
 
             return layer
         case 133:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6544,6 +6677,7 @@ function setupImage(type){
 
             return layer
         case 134:
+            //furina
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6585,6 +6719,7 @@ function setupImage(type){
 
             return layer
         case 135:
+            //alona
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6613,6 +6748,7 @@ function setupImage(type){
 
             return layer
         case 136:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6627,6 +6763,7 @@ function setupImage(type){
 
             return layer
         case 137:
+            //army group
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6647,6 +6784,7 @@ function setupImage(type){
 
             return layer
         case 138:
+            //army group
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6667,6 +6805,7 @@ function setupImage(type){
 
             return layer
         case 139:
+            //army group
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6687,6 +6826,7 @@ function setupImage(type){
 
             return layer
         case 140:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6702,6 +6842,7 @@ function setupImage(type){
 
             return layer
         case 141:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6715,6 +6856,7 @@ function setupImage(type){
 
             return layer
         case 142:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6730,6 +6872,7 @@ function setupImage(type){
 
             return layer
         case 143:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6744,6 +6887,7 @@ function setupImage(type){
             
             return layer
         case 144:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6759,6 +6903,7 @@ function setupImage(type){
             
             return layer
         case 145:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6772,6 +6917,7 @@ function setupImage(type){
             
             return layer
         case 146:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6789,6 +6935,7 @@ function setupImage(type){
             
             return layer
         case 147:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6820,6 +6967,7 @@ function setupImage(type){
 
             return layer
         case 148:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6862,6 +7010,7 @@ function setupImage(type){
             
             return layer
         case 149:
+            //idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6944,6 +7093,7 @@ function setupImage(type){
 
             return layer
         case 150:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6957,6 +7107,7 @@ function setupImage(type){
             
             return layer
         case 151:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6972,6 +7123,7 @@ function setupImage(type){
             
             return layer
         case 152:
+            //infdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -6999,6 +7151,7 @@ function setupImage(type){
 
             return layer
         case 153:
+            //osj idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7033,6 +7186,7 @@ function setupImage(type){
 
             return layer
         case 154:
+            //osj corps
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7048,6 +7202,7 @@ function setupImage(type){
             
             return layer
         case 155:
+            //blue archive idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7160,6 +7315,7 @@ function setupImage(type){
 
             return layer
         case 156:
+            //osj idk
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7201,6 +7357,7 @@ function setupImage(type){
 
             return layer
         case 157:
+            //yayoi
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7239,6 +7396,7 @@ function setupImage(type){
 
             return layer
         case 158:
+            //pzdiv
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7268,6 +7426,7 @@ function setupImage(type){
 
             return layer
         case 159:
+            //shiru circle
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7422,6 +7581,7 @@ function setupImage(type){
 
             return layer
         case 160:
+            //logo attempt
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7441,6 +7601,7 @@ function setupImage(type){
 
             return layer
         case 161:
+            //shiru field
             layer=createGraphics(600,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7547,6 +7708,7 @@ function setupImage(type){
 
             return layer
         case 162:
+            //merge color test
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7562,6 +7724,7 @@ function setupImage(type){
 
             return layer
         case 163:
+            //shiru button
             layer=createGraphics(100,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7740,6 +7903,7 @@ function setupImage(type){
 
             return layer
         case 164:
+            //shiru button
             layer=createGraphics(200,200)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7813,6 +7977,7 @@ function setupImage(type){
 
             return layer
         case 165:
+            //shiru button
             layer=createGraphics(600,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7877,6 +8042,7 @@ function setupImage(type){
 
             return layer
         case 166:
+            //shiru button
             layer=createGraphics(400,400)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7958,6 +8124,7 @@ function setupImage(type){
             
             return layer
         case 167:
+            //shiru button
             layer=createGraphics(50,50)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -7967,9 +8134,9 @@ function setupImage(type){
 
             layer.fill(216,242,255)
             
-            /*layer.rotate(45)
+            layer.rotate(45)
             layer.rect(0,0,8,32)
-            layer.rect(0,0,32,8)*/
+            layer.rect(0,0,32,8)
 
             /*layer.rect(0,16,8)
             layer.rect(0,4,8,10)
@@ -7981,6 +8148,7 @@ function setupImage(type){
             
             return layer
         case 168:
+            //me when
             layer=createGraphics(1500,750)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8003,6 +8171,7 @@ function setupImage(type){
 
             return layer
         case 169:
+            //card
             layer=createGraphics(420,240)
             setupLayer(layer)
             layer.background(255)
@@ -8064,6 +8233,7 @@ function setupImage(type){
 
             return layer
         case 170:
+            //sagu
             layer=createGraphics(720,720)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8116,6 +8286,7 @@ function setupImage(type){
 
             return layer
         case 171:
+            //sagu but awful
             layer=createGraphics(600,600)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8191,6 +8362,7 @@ function setupImage(type){
 
             return layer
         case 172:
+            //background
             layer=createGraphics(600,360)
             setupLayer(layer)
 
@@ -8239,6 +8411,7 @@ function setupImage(type){
             
             return layer
         case 173:
+            //foil
             layer=createGraphics(200,200)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8270,6 +8443,7 @@ function setupImage(type){
 
             return layer
         case 174:
+            //i see
             layer=createGraphics(400,400)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8289,6 +8463,7 @@ function setupImage(type){
 
             return layer
         case 175:
+            //shirutech
             layer=createGraphics(600,600)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8402,6 +8577,7 @@ function setupImage(type){
 
             return layer
         case 176:
+            //shiruglitch
             let swivel=-15
 
             layer=createGraphics(600,600)
@@ -8538,6 +8714,7 @@ function setupImage(type){
 
             return layer
         case 177:
+            //army
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8553,6 +8730,7 @@ function setupImage(type){
 
             return layer
         case 178:
+            //romanian
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8593,6 +8771,7 @@ function setupImage(type){
 
             return layer
         case 179:
+            //eurosim army
             layer=createGraphics(48,30)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8609,10 +8788,11 @@ function setupImage(type){
             layer.textSize(12.5)
             layer.strokeWeight(1)
             layer.text('XXXX',0,1)
-            layer.pop()
+            //layer.pop()
 
             return layer
         case 180:
+            //eurosim flag
             layer=createGraphics(160,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8629,6 +8809,7 @@ function setupImage(type){
 
             return layer
         case 181:
+            //eurosim flag
             layer=createGraphics(160,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8645,6 +8826,7 @@ function setupImage(type){
 
             return layer
         case 182:
+            //eurosim flag
             layer=createGraphics(160,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8657,6 +8839,7 @@ function setupImage(type){
 
             return layer
         case 183:
+            //eurosim flag
             layer=createGraphics(160,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8671,6 +8854,7 @@ function setupImage(type){
 
             return layer
         case 184:
+            //eurosim flag
             layer=createGraphics(160,100)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8689,6 +8873,7 @@ function setupImage(type){
 
             return layer
         case 185:
+            //interregnum items
             layer=createGraphics(72,45)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8705,10 +8890,11 @@ function setupImage(type){
             layer.textSize(18)
             layer.strokeWeight(1.5)
             layer.text('XXXX',0,1)
-            layer.pop()
+            //layer.pop()
 
             return layer
         case 186:
+            //interregnum items
             layer=createGraphics(42,27)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8719,10 +8905,11 @@ function setupImage(type){
             layer.rect(0,0,40.2,25.2)
             layer.strokeWeight(1.8)
             layer.rect(0,0,34.2,19.2)
-            layer.pop()
+            //layer.pop()
 
             return layer
         case 187:
+            //interregnum items
             layer=createGraphics(72,45)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8742,10 +8929,11 @@ function setupImage(type){
             layer.textSize(18)
             layer.strokeWeight(1.5)
             layer.text('XXXX',0,1)
-            layer.pop()
+            //layer.pop()
 
             return layer
         case 188:
+            //interregnum items
             layer=createGraphics(84,54)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8754,10 +8942,11 @@ function setupImage(type){
             layer.stroke(40)
             layer.strokeWeight(4)
             layer.rect(0,0,81,51)
-            layer.pop()
+            //layer.pop()
 
             return layer
         case 189:
+            //ecorcheur unit
             layer=createGraphics(66,41.25)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8778,6 +8967,7 @@ function setupImage(type){
 
             return layer
         case 190:
+            //ecorcheur unit
             layer=createGraphics(60,37.5)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8798,6 +8988,7 @@ function setupImage(type){
 
             return layer
         case 191:
+            //ecorcheur unit
             layer=createGraphics(54,33.75)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8818,6 +9009,7 @@ function setupImage(type){
 
             return layer
         case 192: case 193: case 194: case 195:
+            //ecorcheur unit
             let count=type-192
             let scalar=0.875+count*0.125
             layer=createGraphics(72*scalar,45*scalar)
@@ -8839,6 +9031,7 @@ function setupImage(type){
 
             return layer
         case 196:
+            //mirabels
             layer=createGraphics(300,200)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8859,6 +9052,7 @@ function setupImage(type){
 
             return layer
         case 197:
+            //lira 2
             layer=createGraphics(300,300)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8901,6 +9095,7 @@ function setupImage(type){
 
             return layer
         case 198:
+            //mirabel
             layer=createGraphics(300,200)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -8918,6 +9113,7 @@ function setupImage(type){
 
             return layer
         case 199: case 200: case 201: case 202:
+            //ecorcheur cavalry
             let scalar199=0.875+(type-199)*0.125
             layer=createGraphics(72*scalar199,45*scalar199)
             setupLayer(layer)
@@ -8943,6 +9139,7 @@ function setupImage(type){
 
             return layer
         case 203:
+            //sagume wing
             layer=createGraphics(720,720)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.height/2)
@@ -9054,6 +9251,7 @@ function setupImage(type){
 
             return layer
         case 204:
+            //menessa
             layer=createGraphics(240,160)
             setupLayer(layer)
             //layer.translate(layer.width/2,layer.height/2)
@@ -9100,6 +9298,7 @@ function setupImage(type){
 
             return layer
         case 205:
+            //menessa
             layer=createGraphics(200,160)
             setupLayer(layer)
             //layer.translate(layer.width/2,layer.height/2)
@@ -9157,6 +9356,7 @@ function setupImage(type){
 
             return layer
         case 206:
+            //menessa
             layer=createGraphics(200,160)
             setupLayer(layer)
 
@@ -9209,6 +9409,7 @@ function setupImage(type){
 
             return layer
         case 207:
+            //menessa
             let next=setupImage(206)
 
             layer=createGraphics(1000,1000)
@@ -9333,6 +9534,7 @@ function setupImage(type){
 
             return layer
         case 208:
+            //menessa
             let a208=0
             if(a208==0){
                 let next=setupImage(209)
@@ -9612,6 +9814,7 @@ function setupImage(type){
 
             return layer
         case 209:
+            //menessa
             layer=createGraphics(200,160)
             setupLayer(layer)
 
@@ -9713,6 +9916,7 @@ function setupImage(type){
 
             return layer
         case 210:
+            //sakura pin
             layer=createGraphics(200,260)
             setupLayer(layer)
             layer.translate(layer.width/2,layer.width/2)
